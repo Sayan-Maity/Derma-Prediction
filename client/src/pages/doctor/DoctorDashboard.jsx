@@ -1,6 +1,3 @@
-/* eslint-disable prettier/prettier */
-/* eslint-disable no-unused-vars */
-/* eslint-disable no-undef */
 import axios from 'axios'
 import DashboardWrapper from '../../components/DashboardWrapper'
 import { Flex, Heading, Text, VStack } from '@chakra-ui/react'

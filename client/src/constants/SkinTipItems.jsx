@@ -1,4 +1,4 @@
-/* eslint-disable prettier/prettier */
+
 export const SkinTipItems = [
     {
         title: "Daily Cleansing",

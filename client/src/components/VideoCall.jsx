@@ -1,5 +1,4 @@
-/* eslint-disable prettier/prettier */
-/* eslint-disable no-undef */
+
 import {
   faCopy,
   faMicrophone,
@@ -128,7 +127,7 @@ const VideoCall = ({
               <HStack>
                 <Input
                   placeholder="Enter your name"
-                  onChange={(e) => { setUserName(e.target.value); setUserId(e.target.value) }}
+                  onChange={(e) => setUserName(e.target.value)}
                 />
               </HStack>
               <HStack>

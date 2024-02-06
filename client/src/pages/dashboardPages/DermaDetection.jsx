@@ -1,5 +1,4 @@
-/* eslint-disable prettier/prettier */
-/* eslint-disable no-undef */
+
 import { useState } from "react";
 import axios from "axios";
 import {

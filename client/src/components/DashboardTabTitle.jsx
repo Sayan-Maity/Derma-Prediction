@@ -1,4 +1,4 @@
-/* eslint-disable prettier/prettier */
+
 import { Flex, Text } from '@chakra-ui/react'
 
 const DashboardTabTitle = () => {

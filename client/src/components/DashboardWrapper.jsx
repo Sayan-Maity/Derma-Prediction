@@ -1,4 +1,4 @@
-/* eslint-disable prettier/prettier */
+
 import { VStack, useTheme } from "@chakra-ui/react";
 
 const DashboardWrapper = ({

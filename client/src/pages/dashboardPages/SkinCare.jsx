@@ -1,5 +1,4 @@
-/* eslint-disable prettier/prettier */
-/* eslint-disable no-undef */
+
 import { Flex, Select, Button, useToast, Text, UnorderedList, ListItem, useTheme } from "@chakra-ui/react";
 import axios from "axios";
 import { useState } from "react";

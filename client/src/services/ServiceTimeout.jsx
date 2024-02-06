@@ -1,4 +1,4 @@
-/* eslint-disable prettier/prettier */
+
 export default function timeoutFetch(promise) {
     return new Promise((resolve, reject) => {
         const timeoutId = setTimeout(() => {

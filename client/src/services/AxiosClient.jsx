@@ -1,5 +1,4 @@
-/* eslint-disable prettier/prettier */
-/* eslint-disable no-undef */
+
 import axios from "axios"
 
 const AxiosClient = axios.create()

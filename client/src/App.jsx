@@ -1,4 +1,4 @@
-/* eslint-disable prettier/prettier */
+
 import { BrowserRouter as Router} from "react-router-dom";
 import CustomRoutes from "./routes/CustomRoutes";
 import { UserContext } from "./utils/userContext";

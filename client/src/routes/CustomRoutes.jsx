@@ -1,4 +1,4 @@
-/* eslint-disable prettier/prettier */
+
 import { Route, Routes } from "react-router-dom";
 import LandingPage from "../pages/LandingPages/LandingPage";
 import WrongPage from "../pages/LandingPages/WrongPage";

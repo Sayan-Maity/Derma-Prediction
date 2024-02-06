@@ -1,4 +1,4 @@
-/* eslint-disable prettier/prettier */
+
 import AxiosClient from "../AxiosClient";
 
 export async function getBlogPosts() {

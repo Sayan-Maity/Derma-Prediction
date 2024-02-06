@@ -1,6 +1,4 @@
-/* eslint-disable prettier/prettier */
-/* eslint-disable no-undef */
-/* eslint-disable no-unused-vars */
+
 import { useEffect } from 'react';
 import Cookies from 'js-cookie';
 import { Navigate } from 'react-router-dom';

@@ -1,6 +1,4 @@
-/* eslint-disable prettier/prettier */
-/* eslint-disable no-undef */
-/* eslint-disable no-unused-vars */
+
 import { Button, Checkbox, Flex, Heading, Image, Input, useDisclosure, useTheme, useToast } from '@chakra-ui/react'
 import axios from 'axios'
 import { useEffect, useState } from 'react'

@@ -1,4 +1,4 @@
-/* eslint-disable prettier/prettier */
+
 export const SidebarMainItems = [
     {
       title: "Dashboard",

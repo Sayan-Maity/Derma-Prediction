@@ -1,4 +1,4 @@
-/* eslint-disable prettier/prettier */
+
 import { Button, Flex, Image, Text, useTheme } from '@chakra-ui/react'
 import Sayan from '../assets/images/sayan.jpg'
 

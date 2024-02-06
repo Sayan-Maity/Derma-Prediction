@@ -1,4 +1,4 @@
-/* eslint-disable prettier/prettier */
+
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable no-unused-vars */
 import { Button, Flex, Image, Input, Text, Textarea, VStack, useTheme, useToast } from "@chakra-ui/react";

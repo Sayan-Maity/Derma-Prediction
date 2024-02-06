@@ -1,4 +1,4 @@
-/* eslint-disable prettier/prettier */
+
 import { Flex, Image, Text } from '@chakra-ui/react'
 import Logo from "../assets/svgs/Logo.png"
 import { AiOutlineCopyrightCircle } from 'react-icons/ai';

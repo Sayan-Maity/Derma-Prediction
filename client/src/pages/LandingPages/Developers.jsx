@@ -1,4 +1,4 @@
-/* eslint-disable prettier/prettier */
+
 import { Flex, Heading } from "@chakra-ui/react";
 import Navbar from "../../components/Navbar";
 

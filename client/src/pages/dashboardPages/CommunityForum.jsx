@@ -1,4 +1,4 @@
-/* eslint-disable prettier/prettier */
+
 import { Flex, Button, useToast, Input, Modal, ModalContent, ModalOverlay, ModalBody, ModalCloseButton, useDisclosure, Text, Image, useTheme, Heading, VStack } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
 import { Editor, EditorState, convertToRaw, convertFromRaw } from 'draft-js';

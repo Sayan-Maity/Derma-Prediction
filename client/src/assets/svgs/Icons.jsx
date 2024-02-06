@@ -1,4 +1,4 @@
-/* eslint-disable prettier/prettier */
+
 /* eslint-disable react/no-unknown-property */
 import { Icon } from "@chakra-ui/react";
 

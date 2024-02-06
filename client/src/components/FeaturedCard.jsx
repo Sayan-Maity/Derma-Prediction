@@ -1,4 +1,4 @@
-/* eslint-disable prettier/prettier */
+
 import { Button, Flex, Text, useTheme } from '@chakra-ui/react'
 import { useNavigate } from 'react-router-dom';
 

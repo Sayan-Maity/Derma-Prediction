@@ -1,6 +1,3 @@
-/* eslint-disable prettier/prettier */
-/* eslint-disable react/no-unescaped-entities */
-/* eslint-disable no-undef */
 import {
   faMicrophone,
   faMicrophoneSlash,

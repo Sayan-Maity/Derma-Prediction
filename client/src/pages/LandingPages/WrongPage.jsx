@@ -1,4 +1,4 @@
-/* eslint-disable prettier/prettier */
+
 import { Button, Flex, Image, useTheme } from "@chakra-ui/react";
 import image from "../../assets/images/wrongPage.png"
 import { useNavigate } from "react-router-dom";

@@ -1,4 +1,4 @@
-/* eslint-disable prettier/prettier */
+
 export const FeaturedCardContent = [
     {
         title: "Personalized Dashboard",

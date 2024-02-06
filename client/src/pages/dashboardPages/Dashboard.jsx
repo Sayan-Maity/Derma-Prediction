@@ -1,5 +1,8 @@
-/* eslint-disable prettier/prettier */ 
-/* eslint-disable no-unused-vars */
+import { Line } from 'react-chartjs-2';
+import { IconStar } from "../../assets/svgs/Icons";
+import { Link } from "react-router-dom";
+import DashboardWrapper from "../../components/DashboardWrapper";
+import { useQueryGetDietData, useQueryGetLifeStyleData, useQueryGetSkinCareData, useQueryGetWaterIntakeData } from "../../hooks/queryHooks/user-dashboard";
 import { Button, Flex, HStack, Heading, Text, VStack, useTheme } from "@chakra-ui/react";
 import { useEffect, useRef, useState } from "react";
 import { SkinTipItems } from "../../constants/SkinTipItems";
@@ -16,11 +19,6 @@ import {
 } from 'chart.js';
 ChartJS.register(LinearScale, PointElement, CategoryScale, Tooltip, Legend, LineElement,
   Title);
-import { Line } from 'react-chartjs-2';
-import { IconStar } from "../../assets/svgs/Icons";
-import { Link } from "react-router-dom";
-import DashboardWrapper from "../../components/DashboardWrapper";
-import { useQueryGetDietData, useQueryGetLifeStyleData, useQueryGetSkinCareData, useQueryGetWaterIntakeData } from "../../hooks/queryHooks/user-dashboard";
 
 const Dashboard = () => {
   const theme = useTheme();

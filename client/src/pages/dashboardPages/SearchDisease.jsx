@@ -1,5 +1,4 @@
-/* eslint-disable prettier/prettier */
-/* eslint-disable no-undef */
+
 import { Button, Flex, Input, ListItem, Text, UnorderedList, useTheme, useToast } from "@chakra-ui/react";
 import { SkinDiseaseItems } from "../../constants/SkinDiseaseItems"
 import axios from "axios";

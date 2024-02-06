@@ -1,4 +1,4 @@
-/* eslint-disable prettier/prettier */
+
 import DashboardWrapper from '../../components/DashboardWrapper'
 import { Button, Flex, Heading } from '@chakra-ui/react'
 import { useNavigate, useSearchParams } from 'react-router-dom'

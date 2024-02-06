@@ -1,4 +1,4 @@
-/* eslint-disable prettier/prettier */
+
 /* eslint-disable no-unused-vars */
 import { useQuery } from "@tanstack/react-query";
 import { getLifestyle } from "../../services/user-dashboard/getLifestyle";
