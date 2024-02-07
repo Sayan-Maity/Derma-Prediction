@@ -224,55 +224,53 @@ const DoctorConsultation = () => {
             <VStack gap="2rem" width="1200px" alignItems="center" justifyContent="center">
                 {/* <Heading fontSize="2rem"> Video Call with Doctor </Heading> */}
                 {/* {isSubscribed ? ( */}
-                    <VStack>
-                        {userCalling.isUserCalling && !isCallAccepted && (
-                            <Flex
-                                className="modal fade show d-block"
-                                id="exampleModal"
-                                tabIndex="-1"
-                                aria-labelledby="exampleModalLabel"
-                                aria-hidden="true"
-                                data-backdrop="static"
-                            >
-                                <Flex className="modal-dialog modal-dialog-centered">
-                                    <Flex className="modal-content">
-                                        <Flex className="modal-header">
-                                            <Text className="modal-title" id="exampleModalLabel">
-                                                {userCalling.userName || 'Unknown user'} is calling...
-                                            </Text>
-                                        </Flex>
-                                        <Flex className="modal-footer">
-                                            <Button
-                                                type="button"
-                                                className="btn btn-danger"
-                                                data-dismiss="modal"
-                                                onClick={() => RejectCall(userCalling.id)}
-                                            >
-                                                Reject
-                                            </Button>
-                                            <Button type="button" className="btn btn-success" onClick={AnswerCall}>
-                                                Accept
-                                            </Button>
-                                        </Flex>
+                <VStack>
+                    {userCalling.isUserCalling && !isCallAccepted && (
+                        <Flex
+                            className="modal fade show d-block"
+                            id="exampleModal"
+                            tabIndex="-1"
+                            aria-labelledby="exampleModalLabel"
+                            aria-hidden="true"
+                            data-backdrop="static"
+                        >
+                            <Flex className="modal-dialog modal-dialog-centered">
+                                <Flex className="modal-content">
+                                    <Flex className="modal-header">
+                                        <Text className="modal-title" id="exampleModalLabel">
+                                            {userCalling.userName || 'Unknown user'} is calling...
+                                        </Text>
+                                    </Flex>
+                                    <Flex className="modal-footer">
+                                        <Button
+                                            variant="danger"
+                                            onClick={() => RejectCall(userCalling.id)}
+                                        >
+                                            Reject
+                                        </Button>
+                                        <Button onClick={AnswerCall}>
+                                            Accept
+                                        </Button>
                                     </Flex>
                                 </Flex>
                             </Flex>
-                        )}
+                        </Flex>
+                    )}
 
-                        <VideoCall
-                            callUser={callUser}
-                            myUserId={myUserId}
-                            calling={calling}
-                            cancelCall={cancelCall}
-                            stream={stream}
-                            userVideoRef={userVideoRef}
-                            isCallAccepted={isCallAccepted}
-                            videoRef={videoRef}
-                            LeaveCall={LeaveCall}
-                            shareScreen={shareScreen}
-                            setUserName={setUserName}
-                        />
-                    </VStack>
+                    <VideoCall
+                        callUser={callUser}
+                        myUserId={myUserId}
+                        calling={calling}
+                        cancelCall={cancelCall}
+                        stream={stream}
+                        userVideoRef={userVideoRef}
+                        isCallAccepted={isCallAccepted}
+                        videoRef={videoRef}
+                        LeaveCall={LeaveCall}
+                        shareScreen={shareScreen}
+                        setUserName={setUserName}
+                    />
+                </VStack>
                 {/* ) : (
                     <VStack w="full">
                         <Text>Please Subscribe! </Text>

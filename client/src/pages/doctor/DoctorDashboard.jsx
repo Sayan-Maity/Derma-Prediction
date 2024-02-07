@@ -1,6 +1,6 @@
 import axios from 'axios'
 import DashboardWrapper from '../../components/DashboardWrapper'
-import { Flex, Heading, Text, VStack } from '@chakra-ui/react'
+import { Button, Flex, Heading, Text, VStack } from '@chakra-ui/react'
 import Cookies from 'js-cookie'
 import Peer from 'simple-peer';
 import { io } from 'socket.io-client';
@@ -221,55 +221,53 @@ const DoctorDashboard = () => {
             <Flex gap="2rem" width="1200px" alignItems="flex-start" flexDir="column">
                 {/* <Heading fontSize="2rem"> Video Call with Doctor </Heading> */}
                 {/* {isSubscribed ? ( */}
-                    <VStack>
-                        {userCalling.isUserCalling && !isCallAccepted && (
-                            <Flex
-                                className="modal fade show d-block"
-                                id="exampleModal"
-                                tabIndex="-1"
-                                aria-labelledby="exampleModalLabel"
-                                aria-hidden="true"
-                                data-backdrop="static"
-                            >
-                                <Flex className="modal-dialog modal-dialog-centered">
-                                    <Flex className="modal-content">
-                                        <Flex className="modal-header">
-                                            <Text className="modal-title" id="exampleModalLabel">
-                                                {userCalling.userName || 'Unknown user'} is calling...
-                                            </Text>
-                                        </Flex>
-                                        <Flex className="modal-footer">
-                                            <button
-                                                type="button"
-                                                className="btn btn-danger"
-                                                data-dismiss="modal"
-                                                onClick={() => RejectCall(userCalling.id)}
-                                            >
-                                                Reject
-                                            </button>
-                                            <button type="button" className="btn btn-success" onClick={AnswerCall}>
-                                                Accept
-                                            </button>
-                                        </Flex>
+                <VStack>
+                    {userCalling.isUserCalling && !isCallAccepted && (
+                        <Flex
+                            className="modal fade show d-block"
+                            id="exampleModal"
+                            tabIndex="-1"
+                            aria-labelledby="exampleModalLabel"
+                            aria-hidden="true"
+                            data-backdrop="static"
+                        >
+                            <Flex className="modal-dialog modal-dialog-centered">
+                                <Flex className="modal-content">
+                                    <Flex className="modal-header">
+                                        <Text className="modal-title" id="exampleModalLabel">
+                                            {userCalling.userName || 'Unknown user'} is calling...
+                                        </Text>
+                                    </Flex>
+                                    <Flex className="modal-footer">
+                                        <Button
+                                            variant="danger"
+                                            onClick={() => RejectCall(userCalling.id)}
+                                        >
+                                            Reject
+                                        </Button>
+                                        <Button onClick={AnswerCall}>
+                                            Accept
+                                        </Button>
                                     </Flex>
                                 </Flex>
                             </Flex>
-                        )}
+                        </Flex>
+                    )}
 
-                        <VideoCallDoctor
-                            callUser={callUser}
-                            myUserId={myUserId}
-                            calling={calling}
-                            cancelCall={cancelCall}
-                            stream={stream}
-                            userVideoRef={userVideoRef}
-                            isCallAccepted={isCallAccepted}
-                            videoRef={videoRef}
-                            LeaveCall={LeaveCall}
-                            shareScreen={shareScreen}
-                            setUserName={setUserName}
-                        />
-                    </VStack>
+                    <VideoCallDoctor
+                        callUser={callUser}
+                        myUserId={myUserId}
+                        calling={calling}
+                        cancelCall={cancelCall}
+                        stream={stream}
+                        userVideoRef={userVideoRef}
+                        isCallAccepted={isCallAccepted}
+                        videoRef={videoRef}
+                        LeaveCall={LeaveCall}
+                        shareScreen={shareScreen}
+                        setUserName={setUserName}
+                    />
+                </VStack>
                 {/* ) : (
                     <VStack w="full">
                         <Text>Please Subscribe! </Text>

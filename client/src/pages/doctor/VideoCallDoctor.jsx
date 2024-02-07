@@ -1,15 +1,7 @@
-import {
-  faMicrophone,
-  faMicrophoneSlash,
-  faPhoneAlt,
-  faPhoneSlash,
-  faVideo,
-  faVideoSlash,
-} from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useEffect, useState } from 'react';
 import { Button, HStack, Input, Text, VStack } from '@chakra-ui/react'
 import axios from 'axios';
+import { FaMicrophone, FaMicrophoneSlash, FaPhone, FaPhoneSlash, FaVideo, FaVideoSlash } from "react-icons/fa6";
 
 const VideoCallDoctor = ({
   callUser,
@@ -116,12 +108,20 @@ const VideoCallDoctor = ({
               </HStack>
               <HStack>
                 {calling ? (
-                  <Button onClick={cancelCall}>
-                    <FontAwesomeIcon icon={faPhoneSlash} /> Cancel
+                  <Button
+                    onClick={cancelCall}
+                    gap="0.5rem"
+                  >
+                    <FaPhoneSlash />
+                    Cancel
                   </Button>
                 ) : (
-                  <Button onClick={() => callUser(userToCallId)}>
-                    <FontAwesomeIcon icon={faPhoneAlt} /> Make a call
+                  <Button
+                    onClick={() => callUser(userToCallId)}
+                    gap="0.5rem"
+                  >
+                    <FaPhone />
+                    Make a call
                   </Button>
                 )}
               </HStack>
@@ -132,11 +132,17 @@ const VideoCallDoctor = ({
             <Button onClick={LeaveCall}>
               Leave call
             </Button>
-            <Button onClick={ToggleAudio}>
-              {!isAudioMuted ? <FontAwesomeIcon icon={faMicrophone} /> : <FontAwesomeIcon icon={faMicrophoneSlash} />}
+            <Button
+              onClick={ToggleAudio}
+              gap="0.5rem"
+            >
+              {!isAudioMuted ? <FaMicrophone /> : <FaMicrophoneSlash />}
             </Button>
-            <Button onClick={ToggleVideo}>
-              {!isVideoMuted ? <FontAwesomeIcon icon={faVideo} /> : <FontAwesomeIcon icon={faVideoSlash} />}
+            <Button
+              onClick={ToggleVideo}
+              gap="0.5rem"
+            >
+              {!isVideoMuted ? <FaVideo /> : <FaVideoSlash />}
             </Button>
             <Button onClick={shareScreen}>
               Share screen
