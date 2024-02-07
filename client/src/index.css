@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -25,10 +27,10 @@ body {
   /* color: #63d5e1; */
   /* color: #81efcc; */
   /* color: #3ce2ad; */
-  
+
   /* color: #35dcb6; */
 }
-.custom-imageFile-input-magicWand{
+.custom-imageFile-input-magicWand {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -39,5 +41,4 @@ body {
   border: 3px solid #e4e6ea;
   border-style: dashed;
   border-radius: 5px;
-    
 }
