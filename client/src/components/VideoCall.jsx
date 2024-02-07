@@ -1,18 +1,10 @@
 
-import {
-  faCopy,
-  faMicrophone,
-  faMicrophoneSlash,
-  // faPhoneAlt,
-  faPhoneSlash,
-  faVideo,
-  faVideoSlash,
-} from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useState } from 'react';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { HStack, VStack, Button, Input, useToast } from '@chakra-ui/react'
 import axios from 'axios';
+import { MdContentCopy } from "react-icons/md";
+import { FaMicrophone, FaMicrophoneSlash, FaPhone, FaPhoneSlash, FaVideo, FaVideoSlash } from "react-icons/fa6";
 
 const VideoCall = ({
   // callUser,
@@ -132,8 +124,12 @@ const VideoCall = ({
               </HStack>
               <HStack>
                 <CopyToClipboard text={myUserId} onCopy={handleCopy}>
-                  <Button disabled={!myUserId}>
-                    <FontAwesomeIcon icon={faCopy} /> copy your call ID
+                  <Button
+                    disabled={!myUserId}
+                    gap="0.5rem"
+                  >
+                    <MdContentCopy />
+                     copy your call ID
                   </Button>
                 </CopyToClipboard>
               </HStack>
@@ -143,8 +139,12 @@ const VideoCall = ({
             <VStack>
               <HStack>
                 {calling && (
-                  <Button onClick={cancelCall}>
-                    <FontAwesomeIcon icon={faPhoneSlash} /> Cancel
+                  <Button
+                    onClick={cancelCall}
+                    gap="0.5rem"
+                  >
+                    <FaPhoneSlash />
+                    Cancel
                   </Button>)}
               </HStack>
             </VStack>
@@ -155,11 +155,15 @@ const VideoCall = ({
             <Button onClick={LeaveCall}>
               Leave call
             </Button>
-            <Button onClick={ToggleAudio}>
-              {!isAudioMuted ? <FontAwesomeIcon icon={faMicrophone} /> : <FontAwesomeIcon icon={faMicrophoneSlash} />}
+            <Button
+              onClick={ToggleAudio}
+              gap="0.5rem">
+              {!isAudioMuted ? <FaMicrophone /> : <FaMicrophoneSlash />}
             </Button>
-            <Button onClick={ToggleVideo}>
-              {!isVideoMuted ? <FontAwesomeIcon icon={faVideo} /> : <FontAwesomeIcon icon={faVideoSlash} />}
+            <Button
+              onClick={ToggleVideo}
+              gap="0.5rem">
+              {!isVideoMuted ? <FaVideo /> : <FaVideoSlash />}
             </Button>
             <Button onClick={shareScreen}>
               Share screen
