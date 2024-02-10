@@ -63,7 +63,7 @@ const DoctorConsultation = () => {
             socket.emit('callUser', {
                 from: myUserId,
                 to: userID,
-                userName,
+                // userName,
                 isUserCalling: true,
                 signal: data,
                 isCallAccepted: false,
@@ -217,13 +217,14 @@ const DoctorConsultation = () => {
             setCalling(false);
             setIsCallAccepted(false);
         });
+        
     }, []);
 
     return (
         <DashboardWrapper>
-            <VStack gap="2rem" width="1200px" alignItems="center" justifyContent="center">
+            <VStack gap="2rem" width="1200px" alignItems="center" justifyContent="center" h="full">
                 {/* <Heading fontSize="2rem"> Video Call with Doctor </Heading> */}
-                {/* {isSubscribed ? ( */}
+                {isSubscribed ? (
                 <VStack>
                     {userCalling.isUserCalling && !isCallAccepted && (
                         <Flex
@@ -268,14 +269,13 @@ const DoctorConsultation = () => {
                         videoRef={videoRef}
                         LeaveCall={LeaveCall}
                         shareScreen={shareScreen}
-                        setUserName={setUserName}
                     />
                 </VStack>
-                {/* ) : (
-                    <VStack w="full">
-                        <Text>Please Subscribe! </Text>
+                ) : (
+                    <VStack w="full" h="full" alignItems="center" justifyContent="center">
+                        <Text>Please Upgrade to get Doctor Consultation </Text>
                     </VStack>
-                )} */}
+                )}
 
             </VStack>
         </DashboardWrapper>
