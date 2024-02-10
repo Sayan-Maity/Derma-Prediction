@@ -35,7 +35,7 @@ module.exports.paymentVerification = async (req, res) => {
   console.log(req.body);
   const magicId = req.magicId;
 
-  const { razorpay_order_id, razorpay_payment_id, razorpay_signature } =
+  const { razorpay_order_id, razorpay_payment_id, razorpay_signature, amount, plan_type } =
     req.body;
   const secret = process.env.RAZORPAY_SECRET_KEY;
   const body = razorpay_order_id + "|" + razorpay_payment_id;
@@ -58,8 +58,8 @@ module.exports.paymentVerification = async (req, res) => {
           year: "numeric",
         }),
         //   order_id,
-        amount: 400,
-        plan_type: "Basic",
+        amount: amount,
+        plan_type: plan_type,
       });
       await user.save();
     }
