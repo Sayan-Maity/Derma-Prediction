@@ -112,11 +112,10 @@ const VideoCall = ({
             autoPlay
             muted
             style={{
-              width: '30rem',
-              height: '30rem',
+              width: '100%',
+              height: '100%',
               borderRadius: '10px',
               border: '2px solid #3ce2ad',
-              borderColor: "red"
             }}
           />
 
@@ -126,10 +125,10 @@ const VideoCall = ({
                 ref={userVideoRef}
                 autoPlay
                 style={{
-                  width: '30rem',
-                  height: '30rem',
+                  width: '100%',
+                  height: '100%',
                   borderRadius: '10px',
-                  border: '2px solid #3ce2ad',
+                  border: '2px solid #0078aa',
                 }} />
             </HStack>
           )}
@@ -156,7 +155,6 @@ const VideoCall = ({
                   </Button>
                 </CopyToClipboard>
               </HStack>
-              {/* <Button onClick={handleConnectToDoctor}>Connect to Doctor</Button> */}
             </VStack>
 
             <VStack>
@@ -174,7 +172,7 @@ const VideoCall = ({
 
           </HStack>
         ) : (
-          <div>
+          <HStack>
             <Button onClick={LeaveCall}>
               Leave call
             </Button>
@@ -191,7 +189,7 @@ const VideoCall = ({
             <Button onClick={shareScreen}>
               Share screen
             </Button>
-          </div>
+          </HStack>
         )}
       </VStack>
     </VStack>
