@@ -2,10 +2,20 @@ const mongoose = require("mongoose");
 
 const doctorPatientSchema = new mongoose.Schema(
   {
-    userId: {
-      type: String,
-    },
+    patientData: [
+      {
+        userId: {
+          type: String,
+          required: true,
+        },
+        patientName: {
+          type: String,
+          required: true,
+        },
+      },
+    ],
   },
+
   { timestamps: true }
 );
 
