@@ -1,5 +1,3 @@
-
-/* eslint-disable no-unused-vars */
 import {
   Divider,
   Flex,
@@ -15,7 +13,7 @@ import { useContext, useState } from "react";
 import { PiMagicWand } from "react-icons/pi";
 import { PiStethoscopeFill } from "react-icons/pi";
 import { BiLogOut, BiArrowBack, BiLineChart, BiCheckShield } from "react-icons/bi";
-import { MdOutlineSpaceDashboard, MdOutlineWorkspacePremium  } from "react-icons/md";
+import { MdOutlineSpaceDashboard, MdOutlineWorkspacePremium } from "react-icons/md";
 import { BsBriefcase, BsChatSquareHeart } from "react-icons/bs";
 import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
 import { CiStethoscope } from "react-icons/ci";
@@ -25,6 +23,7 @@ import { magic } from "../utils/magic";
 import Cookies from "js-cookie";
 import Logo from "../assets/images/logo.png"
 import { SidebarMainItems } from "../constants/SidebarItems";
+
 const iconComponentsMenuItems = {
   MdOutlineSpaceDashboard,
   PiStethoscopeFill,
@@ -69,7 +68,7 @@ const Sidebar = () => {
       w={navSize === "small" ? "5rem" : "17rem"}
       flexDir="column"
       justifyContent="space-between"
-        // left="5"
+      // left="5"
       // bgGradient="linear(to-b, teal.300, #0078aa26)"
       bgGradient="linear(to-b, #3ce2ad6e, #0078aa78)"
       transition={navSize === "small" ? "none" : "all 0.2s ease-in"}
@@ -139,7 +138,7 @@ const Sidebar = () => {
                         backgroundColor: "#fff",
                       }}
                       w={navSize === "large" && "100%"}
-                      shadow={`${isActive ? "sm" : "transparent"}`}
+                      // shadow={`${isActive ? "sm" : "transparent"}`}
                     >
                       <MenuButton>
                         <Flex align="center">
