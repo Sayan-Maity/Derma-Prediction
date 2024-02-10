@@ -16,7 +16,7 @@ router.post("/postCommunityForum", postCommunityForum)
 router.get("/getCommunityForum", getCommunityForum)
 router.post("/checkout", authMiddleware, checkout)
 router.post("/paymentVerification", authMiddleware, paymentVerification)
-router.post("/getDoctorPatientId", getDoctorPatientId)
+router.get("/getDoctorPatientId", getDoctorPatientId)
 router.post("/postDoctorPatientId", postDoctorPatientId)
 
 
