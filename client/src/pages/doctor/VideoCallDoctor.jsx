@@ -42,7 +42,8 @@ const VideoCallDoctor = ({
 
         if (res.status === 200) {
           console.log("data here =>", res.data);
-          setListOfUserIds([...listOfUserIds, ...res.data]);
+          setListOfUserIds(res.data);
+
         }
       } catch (error) {
         console.log(error);
@@ -50,7 +51,8 @@ const VideoCallDoctor = ({
     }
 
     getDoctorPatientId();
-  }, [listOfUserIds])
+  }, [])
+  console.log("listOfUserIds =>", listOfUserIds)
 
   return (
     <VStack
@@ -62,7 +64,7 @@ const VideoCallDoctor = ({
       <VStack>
         <Text>List of User Id's</Text>
         {listOfUserIds.map((item, index) => (
-          <Text key={index}>{item.userId}</Text>
+          <Text key={index} color="#333">{item.userId}</Text>
         ))}
 
       </VStack>
@@ -74,11 +76,10 @@ const VideoCallDoctor = ({
             autoPlay
             muted
             style={{
-              width: '30rem',
-              height: '30rem',
+              width: '100%',
+              height: '100%',
               borderRadius: '10px',
               border: '2px solid #3ce2ad',
-              borderColor: "red"
             }}
           />
 
@@ -88,8 +89,8 @@ const VideoCallDoctor = ({
                 ref={userVideoRef}
                 autoPlay
                 style={{
-                  width: '30rem',
-                  height: '30rem',
+                  width: '100%',
+                  height: '100%',
                   borderRadius: '10px',
                   border: '2px solid #0078aa',
                 }} />
