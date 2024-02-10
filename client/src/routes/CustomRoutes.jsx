@@ -7,7 +7,8 @@ import Register from "../pages/authPages/Register";
 import Dashboard from "../pages/dashboardPages/Dashboard";
 import DermaDetection from "../pages/dashboardPages/DermaDetection";
 import Private from "../components/Private";
-import PrivateRoutes from "./PrivateRoutes";
+import PrivateUserRoute from "./PrivateUserRoute";
+import PrivateDoctorRoute from "./PrivateDoctorRoute";
 import ContactUS from "../pages/LandingPages/ContactUs";
 import Developers from "../pages/LandingPages/Developers";
 import SearchDisease from "../pages/dashboardPages/SearchDisease";
@@ -30,25 +31,26 @@ const CustomRoutes = () => {
       <Route exact path="/developers" element={<Developers />} />
       <Route exact path="/contact" element={<ContactUS />} />
       <Route exact path="/payment-success" element={<PaymentSuccess />} />
-
       <Route exact path="*" element={<WrongPage/>} />
+      {/* -----------------------  PUBLIC ROUTES  --------------------- */}
 
-      {/* -----------------------  PRIVATE ROUTES USER  --------------------- */}
-      <Route exact path="/private" element={<PrivateRoutes element={Private} />}>
-        <Route exact path="/private/search-disease" element={<PrivateRoutes element={SearchDisease} />} />
-        <Route exact path="/private/skin-care" element={<PrivateRoutes element={SkinCare} />} />
-        <Route exact path="/private/dashboard" element={<PrivateRoutes element={Dashboard} />} />
-        <Route exact path="/private/derma-detection" element={<PrivateRoutes element={DermaDetection} />} />
-        <Route exact path="/private/health-analytics" element={<PrivateRoutes element={HealthAnalytics} />} />
-        <Route exact path="/private/community-forum" element={<PrivateRoutes element={CommunityForum} />} />
-        <Route exact path="/private/upgrade" element={<PrivateRoutes element={UpgradePlan} />} />
+      {/* -----------------------  PRIVATE USER ROUTES USER  --------------------- */}
+      <Route exact path="/private" element={<PrivateUserRoute element={Private} />}>
+        <Route exact path="/private/search-disease" element={<PrivateUserRoute element={SearchDisease} />} />
+        <Route exact path="/private/skin-care" element={<PrivateUserRoute element={SkinCare} />} />
+        <Route exact path="/private/dashboard" element={<PrivateUserRoute element={Dashboard} />} />
+        <Route exact path="/private/derma-detection" element={<PrivateUserRoute element={DermaDetection} />} />
+        <Route exact path="/private/health-analytics" element={<PrivateUserRoute element={HealthAnalytics} />} />
+        <Route exact path="/private/community-forum" element={<PrivateUserRoute element={CommunityForum} />} />
+        <Route exact path="/private/upgrade" element={<PrivateUserRoute element={UpgradePlan} />} />
       <Route exact path="/private/doctor-consultation" element={<DoctorConsultation />} />
       </Route>
-      {/* -----------------------  PRIVATE ROUTES USER  --------------------- */}
-      {/* -----------------------  PRIVATE ROUTES DOCTOR  --------------------- */}
-      <Route exact path="/doctor" element={<PrivateRoutes element={Doctor} />}>
-        <Route exact path="/doctor/doctor-dashboard" element={<PrivateRoutes element={DoctorDashboard} />} />
-      {/* -----------------------  PRIVATE ROUTES DOCTOR  --------------------- */}
+      {/* -----------------------  PRIVATE USER ROUTES USER  --------------------- */}
+
+      {/* -----------------------  PRIVATE DOCTOR ROUTES DOCTOR  --------------------- */}
+      <Route exact path="/doctor" element={<PrivateDoctorRoute element={Doctor} />}>
+        <Route exact path="/doctor/doctor-dashboard" element={<PrivateDoctorRoute element={DoctorDashboard} />} />
+      {/* -----------------------  PRIVATE DOCTOR ROUTES DOCTOR  --------------------- */}
       </Route>
 
     </Routes>
