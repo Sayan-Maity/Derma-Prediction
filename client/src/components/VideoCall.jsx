@@ -17,22 +17,22 @@ const VideoCall = ({
   videoRef,
   LeaveCall,
   shareScreen,
-  setUserName,
+  // setUserName,
 }) => {
   const toast = useToast()
   const [isVideoMuted, setIsVideoMuted] = useState(false);
   const [isAudioMuted, setIsAudioMuted] = useState(false);
-  const [copiedText, setCopiedText] = useState('');
+  const [userName, setUserName] = useState('');
 
-  const handleCopy = (text, result) => {
-    if (result) {
-      // The text has been successfully copied
-      setCopiedText(text);
-      console.log('Copied:', text);
-    } else {
-      console.error('Copy failed');
-    }
-  };
+  // const handleCopy = (text, result) => {
+  //   if (result) {
+  //     // The text has been successfully copied
+  //     setCopiedText(text);
+  //     console.log('Copied:', text);
+  //   } else {
+  //     console.error('Copy failed');
+  //   }
+  // };
 
   // const dispatch = useDispatch();
 
@@ -47,33 +47,56 @@ const VideoCall = ({
   };
 
 
-  const handleConnectToDoctor = async () => {
-    try {
-      const res = await axios.post(
-        `${process.env.REACT_APP_SERVER_URL}/api/postDoctorPatientId`,
-        { userId: copiedText },
-      );
-
-      if (res.status === 200) {
-        toast({
-          title: "Id sent to Doctor successfully!",
-          variant: "left-accent",
-          position: "top",
-          isClosable: true,
-          duration: 2000,
-          status: "success",
-        });
-      }
-    } catch (err) {
+  const handleConnectToDoctor = async (text, result) => {
+    if (userName === '') {
       toast({
-        title: "Internal Server error",
+        title: "Please enter your name",
         variant: "left-accent",
         position: "top",
         isClosable: true,
         duration: 2000,
         status: "error",
       });
+      return;
     }
+    if (result) {
+      const userGeneratedId = text;
+
+      try {
+        const res = await axios.post(
+          `${process.env.REACT_APP_SERVER_URL}/api/postDoctorPatientId`,
+          {
+            userId: userGeneratedId,
+            patientName: userName
+          },
+        );
+
+        if (res.status === 200) {
+          toast({
+            title: "Id sent to Doctor successfully!",
+            variant: "left-accent",
+            position: "top",
+            isClosable: true,
+            duration: 2000,
+            status: "success",
+          });
+        }
+      } catch (err) {
+        toast({
+          title: "Internal Server error",
+          variant: "left-accent",
+          position: "top",
+          isClosable: true,
+          duration: 2000,
+          status: "error",
+        });
+      }
+
+    } else {
+      console.error('Copy failed');
+    }
+
+
   };
 
   return (
@@ -123,17 +146,17 @@ const VideoCall = ({
                 />
               </HStack>
               <HStack>
-                <CopyToClipboard text={myUserId} onCopy={handleCopy}>
+                <CopyToClipboard text={myUserId} onCopy={handleConnectToDoctor}>
                   <Button
                     disabled={!myUserId}
                     gap="0.5rem"
                   >
-                    <MdContentCopy />
-                     copy your call ID
+                    {/* <MdContentCopy /> */}
+                    Connect to Doctor
                   </Button>
                 </CopyToClipboard>
               </HStack>
-              <Button onClick={handleConnectToDoctor}>Connect to Doctor</Button>
+              {/* <Button onClick={handleConnectToDoctor}>Connect to Doctor</Button> */}
             </VStack>
 
             <VStack>
