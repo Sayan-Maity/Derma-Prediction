@@ -99,7 +99,7 @@ const Login = () => {
             setUser(userMetaData)
             Cookies.set("token", didToken);
             Cookies.set("doctor", false)
-            navigate("/")
+            navigate("/private/derma-detection")
           } else {
             let userMetadata = await magic.user.getInfo();
             setUser(userMetadata);
