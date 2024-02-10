@@ -14,7 +14,7 @@ const PaymentSuccess = () => {
             <Flex gap="2rem" width="1200px" alignItems="flex-start" flexDir="column">
                 <Heading fontSize="2rem"> Payment Success </Heading>
 
-                <Button onClick={() => navigate("/private/dashboard")}>Back to Dashboard</Button>
+                <Button onClick={() => navigate("/private/upgrade")}>Back to Dashboard</Button>
                 
             </Flex>
         </DashboardWrapper>
