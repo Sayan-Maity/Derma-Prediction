@@ -13,12 +13,15 @@ module.exports.getDoctorPatientId = async (req, res) => {
 
 // POST
 module.exports.postDoctorPatientId = async (req, res) => {
-  const { userId } = req.body;
+  const { userId, patientName } = req.body;
   try {
-    const newPatientId = new DoctorPatientModel({
+    const doctorPatientInstance = new DoctorPatientModel();
+
+    doctorPatientInstance.patientData.push({
       userId,
+      patientName,
     });
-    await newPatientId.save();
+    await doctorPatientInstance.save();
     res.json({ message: "Id got Saved" });
   } catch (error) {
     console.error(error);
