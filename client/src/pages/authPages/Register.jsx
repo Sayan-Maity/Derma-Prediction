@@ -58,24 +58,6 @@ const Register = () => {
         return;
       }
       try {
-        //checking if user exists
-        const check = await Axios.post(
-          `${process.env.REACT_APP_SERVER_URL}/api/auth/check`,
-          {
-            email: email,
-          }
-        );
-        if (check.data.status) {
-          setLoading(false);
-          return toast({
-            title: "User already exists!",
-            variant: "left-accent",
-            position: "top",
-            isClosable: true,
-            duration: 2000,
-            status: "error",
-          });
-        }
         const resp = await Axios.post(
           `${process.env.REACT_APP_SERVER_URL}/api/auth/register`,
           {
@@ -217,3 +199,4 @@ const Register = () => {
 };
 
 export default Register;
+
