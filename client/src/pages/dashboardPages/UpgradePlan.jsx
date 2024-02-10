@@ -64,12 +64,14 @@ const UpgradePlan = () => {
                 description: "Test Transaction",
                 // callback_url: `${process.env.REACT_APP_SERVER_URL}/api/paymentVerification`,
                 handler: async function (resp) {
-                    // console.log("Payment Successful")
+                    console.log("Payment Successful", resp)
                     try {
                         const res = await axios.post(`${process.env.REACT_APP_SERVER_URL}/api/paymentVerification`, {
                             razorpay_order_id: resp.razorpay_order_id,
                             razorpay_payment_id: resp.razorpay_payment_id,
-                            razorpay_signature: resp.razorpay_signature
+                            razorpay_signature: resp.razorpay_signature,
+                            amount: Number(400),
+                            plan_type: "Basic"
                         }, {
                             headers: {
                                 Authorization: "Bearer " + Cookies.get("token")
@@ -94,7 +96,8 @@ const UpgradePlan = () => {
                     address: "Razorpay Corporate Office"
                 },
                 theme: {
-                    color: "#121212"
+                    color: "#3ce2ad"
+                    // color: "#121212"
                 }
             };
             const razor = new window.Razorpay(options);
@@ -105,10 +108,10 @@ const UpgradePlan = () => {
         }
     }
 
-    useEffect(() => {
+    // useEffect(() => {
         
 
-    }, [])
+    // }, [])
 
 
 
@@ -170,7 +173,7 @@ const UpgradePlan = () => {
                             >Upgrade (Pay 400)</Button>
                         </VStack>
                     </VStack>
-                    {/* <VStack
+                    <VStack
                         borderRadius="0.5rem"
                         border="1px solid #74809a"
                         w="22rem"
@@ -221,7 +224,7 @@ const UpgradePlan = () => {
                                 borderRadius="0.5rem"
                             >Upgrade (Pay 3000)</Button>
                         </VStack>
-                    </VStack> */}
+                    </VStack>
 
                 </HStack>
 
