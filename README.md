@@ -4,7 +4,7 @@
   🏆 Winner of the ` Best AI Hack ` @Diversion Hackathon 2024 by IEM-ACM
 </h3>
 
-
+## 📜 Project Details :
 <p align="center">
   <img src="./client/src/assets/readmeImages/banner.jpg" alt="banner">
 </p>
