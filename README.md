@@ -9,7 +9,7 @@
 Author : [Sayan Maity](https://github.com/Sayan-Maity) | [Riya Mahanty](https://github.com/riyamahantyyy) | [Joybrata Das](https://github.com/joyous4) |  [Samrat Das](https://github.com/das2Samrat)
 
 <p align="center">
-  <img src="./client/src/assets/preview/banner.png" alt="banner">
+  <img src="./client/src/assets/readmeImages/banner.jpg" alt="banner">
 </p>
 
 ## 🛠️ Built with :
