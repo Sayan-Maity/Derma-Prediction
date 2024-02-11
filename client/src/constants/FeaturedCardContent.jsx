@@ -27,8 +27,23 @@ export const FeaturedCardContent = [
         navigateUrl: "/private/health-analytics",
     },
     {
+        title: "Personalized Mail Alerts",
+        description: "Harnesses data-driven insights to help users monitor and optimize their overall health, offering valuable information for making informed lifestyle choices",
+        navigateUrl: "/private/health-analytics",
+    },
+    {
         title: "Community Forum",
         description: "Fosters a supportive online community where users can share experiences, seek advice, and connect with others facing similar health challenges",
         navigateUrl: "/private/community-forum",
-    }
+    },
+    {
+        title: "Upgrade Plan",
+        description: "Fosters a supportive online community where users can share experiences, seek advice, and connect with others facing similar health challenges",
+        navigateUrl: "/private/upgrade",
+    },
+    {
+        title: "Doctor Consultation",
+        description: "Fosters a supportive online community where users can share experiences, seek advice, and connect with others facing similar health challenges",
+        navigateUrl: "/private/doctor-consultation",
+    },
 ]
