@@ -1,7 +1,7 @@
 
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable no-unused-vars */
-import { Button, Flex, Image, Input, Text, Textarea, VStack, useTheme, useToast } from "@chakra-ui/react";
+import { Button, Flex, HStack, Image, Input, Text, Textarea, VStack, useTheme, useToast } from "@chakra-ui/react";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import LandingVector from "../../assets/images/LandingVector.png";
@@ -81,16 +81,25 @@ const LandingPage = () => {
       <Flex flexDir="column" width="100%" backgroundColor="#81efcc" alignItems="center" justifyContent="center">
         <SectionTitle title={LandingSectionTitle[1].title} description={LandingSectionTitle[1].description} />
 
-        <Flex width={{ base: "full", xl: "1280px" }} p="3rem" flexDir="row" flexWrap="wrap" gap="3rem 1rem" justifyContent="center" alignItems="center">
+        <HStack width={{ base: "full", xl: "1280px" }} p="3rem" flexWrap="wrap" gap="2rem 0" justifyContent="center" alignItems="center">
+          
+          <HStack w="full" justifyContent="center" gap="3rem 1rem" >
+            <FeaturedCard featuredItem={FeaturedCardContent[0]} />
+            <FeaturedCard featuredItem={FeaturedCardContent[1]} />
+            {/* <FeaturedCard featuredItem={FeaturedCardContent[2]} /> */}
+            <FeaturedCard featuredItem={FeaturedCardContent[3]} />
+          </HStack>
+          <HStack w="full" justifyContent="center" gap="3rem 1rem" >
+            <FeaturedCard featuredItem={FeaturedCardContent[4]} />
+            <FeaturedCard featuredItem={FeaturedCardContent[5]} />
+          </HStack>
+          <HStack w="full" justifyContent="center" gap="3rem 1rem" >
+            <FeaturedCard featuredItem={FeaturedCardContent[6]} />
+            <FeaturedCard featuredItem={FeaturedCardContent[7]} />
+            <FeaturedCard featuredItem={FeaturedCardContent[8]} />
+          </HStack>
 
-          <FeaturedCard featuredItem={FeaturedCardContent[0]} />
-          <FeaturedCard featuredItem={FeaturedCardContent[1]} />
-          {/* <FeaturedCard featuredItem={FeaturedCardContent[2]} /> */}
-          <FeaturedCard featuredItem={FeaturedCardContent[3]} />
-          <FeaturedCard featuredItem={FeaturedCardContent[4]} />
-          <FeaturedCard featuredItem={FeaturedCardContent[5]} />
-
-        </Flex>
+        </HStack>
       </Flex>
 
       {/* -------------------------------  Why Choose Us Section  -------------------------------- */}
