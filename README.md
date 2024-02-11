@@ -1,8 +1,8 @@
 # <img src = "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExODJ3YWRuajZ1d2pydm0zaW44bW1qMmF2eHlleW1peGt5ejhrMjJkYSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/kU4mcmHfmV7YhuIj6J/giphy.gif" width="45"> Dermify.AI
 
-<h4 align="center">
+<h3 align="center">
   🏆 Winner of the ` Best AI Hack ` @Diversion Hackathon 2024 by IEM-ACM
-</h4>
+</h3>
 
 > Welcome to the  ``` Dermify.AI ``` 👨🏻‍⚕️💉 web app! Dermify is the first AI powered Skin Diagnosis application which harnesses the power of Image Processing and Google's Bard (LLM) to offer cost-effective and accessible skin condition assessments worldwide.
 
