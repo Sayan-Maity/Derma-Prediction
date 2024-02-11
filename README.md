@@ -4,13 +4,14 @@
   🏆 Winner of the ` Best AI Hack ` @Diversion Hackathon 2024 by IEM-ACM
 </h3>
 
-> Welcome to the  ``` Dermify.AI ``` 👨🏻‍⚕️💉 web app! Dermify is the first AI powered Skin Diagnosis application which harnesses the power of Image Processing and Google's Bard (LLM) to offer cost-effective and accessible skin condition assessments worldwide.
-
-Author : [Sayan Maity](https://github.com/Sayan-Maity) | [Riya Mahanty](https://github.com/riyamahantyyy) | [Joybrata Das](https://github.com/joyous4) |  [Samrat Das](https://github.com/das2Samrat)
 
 <p align="center">
   <img src="./client/src/assets/readmeImages/banner.jpg" alt="banner">
 </p>
+
+> Welcome to the  ``` Dermify.AI ``` 👨🏻‍⚕️💉 web app! Dermify is the first AI powered Skin Diagnosis application which harnesses the power of Image Processing and Google's Bard (LLM) to offer cost-effective and accessible skin condition assessments worldwide.
+
+Author : [Sayan Maity](https://github.com/Sayan-Maity) | [Riya Mahanty](https://github.com/riyamahantyyy) | [Joybrata Das](https://github.com/joyous4) |  [Samrat Das](https://github.com/das2Samrat)
 
 ## 🛠️ Built with :
 ![Bard](https://neuron.infura-ipfs.io/ipfs/QmTwgwYJV5bx3wnvZAVRUP9a9tVGT58pFeycvhMWhrgkGF) <img src="https://img.shields.io/badge/reactjs%20-%23333.svg?&style=for-the-badge&logo=react&logoColor=%2361DAFB"/> <img src="https://img.shields.io/badge/chakraui%20-%31BB.svg?&style=for-the-badge&logo=chakraui&logoColor=white"/> <img src="https://img.shields.io/badge/razorpay%20-%23008CDD.svg?&style=for-the-badge&logo=razorpay&logoColor=white"/> <img src="https://img.shields.io/badge/nodejs%20-%23339933.svg?&style=for-the-badge&logo=nodedotjs&logoColor=white"/> <img src="https://img.shields.io/badge/expressjs%20-%23000000.svg?&style=for-the-badge&logo=express&logoColor=white"/> <img src="https://img.shields.io/badge/mongodb%20-%2347A248.svg?&style=for-the-badge&logo=mongodb&logoColor=white"/> <img src="https://img.shields.io/badge/vercel%20-%23000000.svg?&style=for-the-badge&logo=vercel&logoColor=white"/> <img src="https://img.shields.io/badge/render%20-%2346E3B7.svg?&style=for-the-badge&logo=render&logoColor=white"/> <img src="https://img.shields.io/badge/huggingface%20-yellow.svg?&style=for-the-badge&logo=huggingface&logoColor=white"/> 
