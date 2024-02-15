@@ -46,6 +46,9 @@ Author : [Sayan Maity](https://github.com/Sayan-Maity) | [Riya Mahanty](https://
 ## 📸 Screenshots :
 
 ## 📸 Developers :
+<p align="center">
+    <img src="./client/src/assets/readmeImages/team.png" alt="logo" height="90rem" width="90rem">
+  </p>
 
 ## 📝 Endnote :
 
