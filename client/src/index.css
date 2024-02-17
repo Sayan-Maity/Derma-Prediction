@@ -22,14 +22,9 @@
 }
 
 body {
-  /* color: #0078aa; */
-  /* color: #11bfdb; */
-  /* color: #63d5e1; */
-  /* color: #81efcc; */
-  /* color: #3ce2ad; */
-
-  /* color: #35dcb6; */
+  font-family: "Inter", sans-serif;
 }
+
 .custom-imageFile-input-magicWand {
   display: flex;
   flex-direction: column;
