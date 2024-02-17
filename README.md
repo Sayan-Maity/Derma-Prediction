@@ -21,7 +21,7 @@ Author : [Sayan Maity](https://github.com/Sayan-Maity) | [Riya Mahanty](https://
 
 ## 🛠️ Built with :
 
-![Bard](https://neuron.infura-ipfs.io/ipfs/QmTwgwYJV5bx3wnvZAVRUP9a9tVGT58pFeycvhMWhrgkGF) <img src="https://img.shields.io/badge/reactjs%20-%23333.svg?&style=for-the-badge&logo=react&logoColor=%2361DAFB"/> <img src="https://img.shields.io/badge/chakraui%20-%31BB.svg?&style=for-the-badge&logo=chakraui&logoColor=white"/> <img src="https://img.shields.io/badge/magic%20-8A2BE2.svg?&style=for-the-badge&logo=magic&logoColor=white"/> <img src="https://img.shields.io/badge/razorpay%20-2b83ea.svg?&style=for-the-badge&logo=razorpay&logoColor=white"/> <img src="https://img.shields.io/badge/nodejs%20-%23339933.svg?&style=for-the-badge&logo=nodedotjs&logoColor=white"/> <img src="https://img.shields.io/badge/expressjs%20-%23000000.svg?&style=for-the-badge&logo=express&logoColor=white"/> <img src="https://img.shields.io/badge/mongodb%20-%2347A248.svg?&style=for-the-badge&logo=mongodb&logoColor=white"/> <img src="https://img.shields.io/badge/vercel%20-%23000000.svg?&style=for-the-badge&logo=vercel&logoColor=white"/> <img src="https://img.shields.io/badge/render%20-%2346E3B7.svg?&style=for-the-badge&logo=render&logoColor=white"/> <img src="https://img.shields.io/badge/huggingface%20-yellow.svg?&style=for-the-badge&logo=huggingface&logoColor=white"/> 
+![Bard](https://neuron.infura-ipfs.io/ipfs/QmTwgwYJV5bx3wnvZAVRUP9a9tVGT58pFeycvhMWhrgkGF) <img src="https://img.shields.io/badge/reactjs%20-%23333.svg?&style=for-the-badge&logo=react&logoColor=%2361DAFB"/> <img src="https://img.shields.io/badge/chakraui%20-%31BB.svg?&style=for-the-badge&logo=chakraui&logoColor=white"/> <img src="https://img.shields.io/badge/magic%20-8A2BE2.svg?&style=for-the-badge&logo=magic&logoColor=white"/> <img src="https://img.shields.io/badge/razorpay%20-2b83ea.svg?&style=for-the-badge&logo=razorpay&logoColor=white"/> <img src="https://img.shields.io/badge/nodejs%20-%23339933.svg?&style=for-the-badge&logo=nodedotjs&logoColor=white"/> <img src="https://img.shields.io/badge/expressjs%20-%23000000.svg?&style=for-the-badge&logo=express&logoColor=white"/> <img src="https://img.shields.io/badge/mongodb%20-%2347A248.svg?&style=for-the-badge&logo=mongodb&logoColor=white"/> <img src="https://img.shields.io/badge/vercel%20-%23000000.svg?&style=for-the-badge&logo=vercel&logoColor=white"/> <img src="https://img.shields.io/badge/render%20-%2346E3B7.svg?&style=for-the-badge&logo=render&logoColor=white"/> <img src="https://img.shields.io/badge/huggingface%20-yellow.svg?&style=for-the-badge&logo=huggingface&logoColor=white"/>
 
 - **Frontend**: ReactJS, Chakra-UI
 - **Backend**: NodeJS, ExpressJS, MongoDB
@@ -44,146 +44,87 @@ Author : [Sayan Maity](https://github.com/Sayan-Maity) | [Riya Mahanty](https://
 - Connect with healthcare professionals for online consultations (Video Chat) and advice
 
 ## 📸 Screenshots :
+
 <table>
     <tr>
         <td width="50%">
             <img src="./client/src/assets/readmeImages/1.jpg"></img>
             <br />
-            <p align="center">Service Section</p>
+            <p align="center">Landing Page Section</p>
         </td>
         <td width="50%">
             <img src="./client/src/assets/readmeImages/2.jpeg"></img>
             <br />
-            <p align="center">Why choose SheRise?</p>
+            <p align="center">Features Section</p>
         </td>
     </tr>
     <tr>
         <td width="50%">
             <img src="./client/src/assets/readmeImages/3.jpeg"></img>
             <br />
-            <p align="center">Service Section</p>
+            <p align="center">Why Choose Us Section</p>
         </td>
         <td width="50%">
             <img src="./client/src/assets/readmeImages/4.jpeg"></img>
             <br />
-            <p align="center">Why choose SheRise?</p>
+            <p align="center">Contact Us Section</p>
         </td>
     </tr>
     <tr>
         <td colspan="2">
             <img src="./client/src/assets/readmeImages/5.jpg"></img>
             <br />
-            <h3 align="center">Home Page</h3>
+            <h3 align="center">User Dashboard Page</h3>
         </td>
     </tr>
     <tr>
         <td width="50%">
             <img src="./client/src/assets/readmeImages/6.jpg"></img>
             <br />
-            <p align="center">Developers Page</p></td>
+            <p align="center">Derma Prediction Page</p>
+            </td>
         <td width="50%">
             <img src="./client/src/assets/readmeImages/7.jpg"></img>
             <br />
-            <p align="center">Contact Us Page</p></td>
+            <p align="center">Explore Derma Page</p>
+            </td>
     </tr>
     <tr>
         <td width="50%">
             <img src="./client/src/assets/readmeImages/8.jpg"></img>
             <br />
-            <p align="center">Donation Success Page</p></td>
+            <p align="center">Health Analytics Page</p>
+        </td>
         <td width="50%">
             <img src="./client/src/assets/readmeImages/9.jpg"></img>
             <br />
-            <p align="center">Donation Cancelled Page</p></td>
+            <p align="center">Community Forum Page</p>
+        </td>
+    </tr>
+    <tr>
+         <td width="50%">
+            <img src="./client/src/assets/readmeImages/10.jpg"></img>
+            <br />
+            <p align="center">Subscription Plan Page</p>
+        </td>
+        <td width="50%">
+            <img src="./client/src/assets/readmeImages/10.jpg"></img>
+            <br />
+            <p align="center">Patient Video Call Page</p>
+        </td>
     </tr>
     <tr>
         <td colspan="2">
             <img src="./client/src/assets/readmeImages/10.jpg"></img>
             <br />
-            <h3 align="center">Stripe Payment Page</h3>
+            <h3 align="center">Doctor's Dashboard</h3>
         </td>
     </tr>
-    <tr>
-        <td width="50%">
-            <img src="./client/src/assets/preview/preview11.jpg"></img>
-            <br />
-            <p align="center">Login Page</p></td>
-        <td width="50%">
-            <img src="./client/src/assets/preview/preview12.jpeg"></img>
-            <br />
-            <p align="center">Register Page</p></td>
-    </tr>
-    <tr>
-        <td colspan="2">
-            <img src="./client/src/assets/preview/preview13.jpg"></img>
-            <br />
-            <h3 align="center">User Dashboard</h3>
-        </td>
-    </tr>
-    <tr>
-        <td width="50%">
-            <img src="./client/src/assets/preview/preview14.jpg"></img>
-            <br />
-            <p align="center">Conference Page</p></td>
-        <td width="50%">
-            <img src="./client/src/assets/preview/preview15.jpg"></img>
-            <br />
-            <p align="center">Hackathon Page</p></td>
-    </tr>
-    <tr>
-        <td width="50%">
-            <img src="./client/src/assets/preview/preview16.jpg"></img>
-            <br />
-            <p align="center">Hiring Page</p></td>
-        <td width="50%">
-            <img src="./client/src/assets/preview/preview17.jpg"></img>
-            <br />
-            <p align="center">Internship Page</p></td>
-    </tr>
-    <tr>
-        <td colspan="2">
-            <img src="./client/src/assets/preview/preview18.jpg"></img>
-            <br />
-            <h3 align="center">Workshop Page</h3>
-        </td>
-    </tr>
-    <tr>
-        <td colspan="2">
-            <img src="./client/src/assets/preview/preview19.jpg"></img>
-            <br />
-            <h3 align="center">AI Assistant</h3>
-        </td>
-    </tr>
-    <tr>
-        <td width="50%">
-            <img src="./client/src/assets/preview/preview20.jpg"></img>
-            <br />
-            <p align="center">Ask any Ques. Service</p></td>
-        <td width="50%">
-            <img src="./client/src/assets/preview/preview21.jpg"></img>
-            <br />
-            <p align="center">Email Correction Service</p></td>
-    </tr>
-    <tr>
-        <td colspan="2">
-            <img src="./client/src/assets/preview/preview22.jpg"></img>
-            <br />
-            <h3 align="center">One-2-One Mentorship</h3>
-        </td>
-    </tr>
-    <tr></tr>
-        <td width="50%">
-            <img src="./client/src/assets/preview/preview23.jpg"></img>
-            <br />
-            <p align="center">User Chatting Interface</p></td>
-        <td width="50%">
-            <img src="./client/src/assets/preview/preview24.jpg"></img>
-            <br />
-            <p align="center">Admin/Mentor Chatting Interface</p></td>
-    </tr>
+    
 </table>
 
 ## 📸 Developers :
+
 <p align="center">
     <img src="./client/src/assets/readmeImages/team2.png" alt="logo" height="100%" width="100%">
   </p>
