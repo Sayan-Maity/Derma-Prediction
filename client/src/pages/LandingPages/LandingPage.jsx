@@ -167,7 +167,7 @@ const LandingPage = () => {
               p="1.5rem"
               display="flex"
               color="#fff"
-              borderRadius="30px">Submit</Button>
+              borderRadius="10px">Submit</Button>
           </form>
         </Flex>
         <Flex width="50%" alignItems="center" justifyContent="center">
