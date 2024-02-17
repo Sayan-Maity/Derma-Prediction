@@ -55,7 +55,7 @@ const LandingPage = () => {
             p="1.5rem"
             width="fit-content"
             display="flex"
-            borderRadius="30px"
+            borderRadius="10px"
             transition={"all 0.3s ease"}
             color={theme.colors.button.light_color}
             backgroundColor={theme.colors.button.light_backgroundColor}
