@@ -46,10 +46,15 @@ Author : [Sayan Maity](https://github.com/Sayan-Maity) | [Riya Mahanty](https://
 ## 📸 Screenshots :
 <table>
     <tr>
-        <td colspan="2">
+        <td width="50%">
+            <img src="./client/src/assets/readmeImages/1.jpg"></img>
+            <br />
+            <p align="center">Service Section</p>
+        </td>
+        <td width="50%">
             <img src="./client/src/assets/readmeImages/2.jpeg"></img>
             <br />
-            <h3 align="center">Home Page</h3>
+            <p align="center">Why choose SheRise?</p>
         </td>
     </tr>
     <tr>
@@ -65,40 +70,35 @@ Author : [Sayan Maity](https://github.com/Sayan-Maity) | [Riya Mahanty](https://
         </td>
     </tr>
     <tr>
-        <td width="50%">
+        <td colspan="2">
             <img src="./client/src/assets/readmeImages/5.jpg"></img>
             <br />
-            <p align="center">Testimonials</p>
-        </td>
-        <td width="50%">
-            <img src="./client/src/assets/readmeImages/6.jpg"></img>
-            <br />
-            <p align="center">Donation Page</p>
+            <h3 align="center">Home Page</h3>
         </td>
     </tr>
     <tr>
         <td width="50%">
-            <img src="./client/src/assets/readmeImages/7.jpg"></img>
+            <img src="./client/src/assets/readmeImages/6.jpg"></img>
             <br />
             <p align="center">Developers Page</p></td>
         <td width="50%">
-            <img src="./client/src/assets/readmeImages/8.jpg"></img>
+            <img src="./client/src/assets/readmeImages/7.jpg"></img>
             <br />
             <p align="center">Contact Us Page</p></td>
     </tr>
     <tr>
         <td width="50%">
-            <img src="./client/src/assets/readmeImages/9.jpg"></img>
+            <img src="./client/src/assets/readmeImages/8.jpg"></img>
             <br />
             <p align="center">Donation Success Page</p></td>
         <td width="50%">
-            <img src="./client/src/assets/readmeImages/10.jpg"></img>
+            <img src="./client/src/assets/readmeImages/9.jpg"></img>
             <br />
             <p align="center">Donation Cancelled Page</p></td>
     </tr>
     <tr>
         <td colspan="2">
-            <img src="./client/src/assets/preview/preview10.jpg"></img>
+            <img src="./client/src/assets/readmeImages/10.jpg"></img>
             <br />
             <h3 align="center">Stripe Payment Page</h3>
         </td>
