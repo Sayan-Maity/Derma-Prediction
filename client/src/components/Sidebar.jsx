@@ -57,6 +57,7 @@ const Sidebar = () => {
       });
       setUser({ user: null });
       Cookies.remove("token");
+      Cookies.remove("doctor");
       navigate("/");
     });
   };
