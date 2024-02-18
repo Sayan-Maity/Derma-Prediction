@@ -25,7 +25,10 @@ const PrivateUserRoute = ({ element: Component, ...rest }) => {
     renewToken();
   }, []);
 
-  return Cookies.get('token') ? <Component /> : <Navigate to="/login" />;
+  const isDoctor = Cookies.get('doctor') === "false";
+  const isTokenPresent = Cookies.get('token') !== undefined;
+
+  return isDoctor && isTokenPresent ? <Component /> : <Navigate to="/login" />;
   // return <Component /> 
 };
 
