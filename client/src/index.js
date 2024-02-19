@@ -1,13 +1,11 @@
-
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-
-// import store from './Redux/Store';
-// import { Provider } from 'react-redux';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import App from "./App";
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { Provider } from "react-redux";
+import store from "./redux/store/store";
 
 const theme = extendTheme({
   colors: {
@@ -54,20 +52,15 @@ const queryClient = new QueryClient({
       staleTime: 10000,
     },
   },
-})
+});
 
 ReactDOM.render(
-  <React.StrictMode>
-    <QueryClientProvider client={queryClient}>
-      <ChakraProvider theme={theme}>
+  <QueryClientProvider client={queryClient}>
+    <ChakraProvider theme={theme}>
+      <Provider store={store}>
         <App />
-      </ChakraProvider>
-    </QueryClientProvider>
-  </React.StrictMode>,
-  // <React.StrictMode>
-  //   <Provider store={store}>
-  //     <App />
-  //   </Provider>
-  // </React.StrictMode>,
-  document.getElementById('root')
+      </Provider>
+    </ChakraProvider>
+  </QueryClientProvider>,
+  document.getElementById("root")
 );
