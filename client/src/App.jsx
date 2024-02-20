@@ -5,7 +5,7 @@ import { UserContext } from "./utils/userContext";
 import { useEffect, useState } from "react";
 import { hotjar } from "react-hotjar";
 import { Provider } from "react-redux";
-import store from "./redux/store/store";
+// import store from "./redux/store/store";
 
 const App = () => {
   const [user, setUser] = useState(null);
@@ -19,11 +19,11 @@ const App = () => {
 
   return (
     <UserContext.Provider value={[user, setUser]}>
-      <Provider store={store}>
+      {/* <Provider store={store}> */}
       <Router>
         <CustomRoutes />
       </Router>
-      </Provider>
+      {/* </Provider> */}
     </UserContext.Provider>
   );
 };
