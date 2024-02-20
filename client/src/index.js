@@ -4,8 +4,6 @@ import "./index.css";
 import App from "./App";
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { Provider } from "react-redux";
-import store from "./redux/store/store";
 
 const theme = extendTheme({
   colors: {
@@ -57,9 +55,7 @@ const queryClient = new QueryClient({
 ReactDOM.render(
   <QueryClientProvider client={queryClient}>
     <ChakraProvider theme={theme}>
-      <Provider store={store}>
-        <App />
-      </Provider>
+      <App />
     </ChakraProvider>
   </QueryClientProvider>,
   document.getElementById("root")
