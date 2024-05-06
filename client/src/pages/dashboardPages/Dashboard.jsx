@@ -209,10 +209,10 @@ const Dashboard = () => {
       y: {
         title: {
           display: true,
-          text: 'Water (Litres)',
+          text: 'Food Comsumption (boolean)',
         },
         min: 0,
-        max: 5
+        max: 1
       },
     },
   };
@@ -223,8 +223,8 @@ const Dashboard = () => {
         label: "Cleanser",
         data: dietData?.map((data) => data.cleanser),
         borderWidth: 2,
-        backgroundColor: "#0078aa",
-        borderColor: '#0078aa',
+        backgroundColor: "#3ce2ad",
+        borderColor: '#3ce2ad',
         fill: false,
         tension: 0.8, //curve
         cubicInterpolationMode: 'monotone',
@@ -238,7 +238,17 @@ const Dashboard = () => {
         fill: false,
         tension: 0.8, //curve
         cubicInterpolationMode: 'monotone',
-      }
+      },
+      {
+        label: "Moisturizer",
+        data: dietData?.map((data) => data.toner),
+        borderWidth: 2,
+        backgroundColor: "red",
+        borderColor: 'red',
+        fill: false,
+        tension: 0.8, //curve
+        cubicInterpolationMode: 'monotone',
+      },
     ],
   };
 
@@ -254,10 +264,10 @@ const Dashboard = () => {
       y: {
         title: {
           display: true,
-          text: 'Water (Litres)',
+          text: 'Skin Care Done (boolean)',
         },
         min: 0,
-        max: 5
+        max: 1
       },
     },
   };
