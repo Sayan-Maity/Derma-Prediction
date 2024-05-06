@@ -154,7 +154,7 @@ const HealthAnalytics = () => {
         if (isButtonActive4) {
             try {
                 const res = await axios.post(`${process.env.REACT_APP_SERVER_URL}/api/user/postSkinCareRoutineData`, {
-                    moisurizer: moisurizerValue,
+                    moisturizer: moisurizerValue,
                     cleanser: cleanserValue,
                     toner: tonerValue,
                 }, {
