@@ -72,7 +72,7 @@ module.exports.getSkinCareRoutineData = async (req, res) => {
 
 // save user skin care routine data
 module.exports.postSkinCareRoutineData = async (req, res) => {
-  const { cleanser, moisturizer, toner } = req.body;
+  const { moisturizer, cleanser, toner } = req.body;
   const magicId = req.magicId;
 
   try {
@@ -90,8 +90,8 @@ module.exports.postSkinCareRoutineData = async (req, res) => {
 
     user.skinCareRoutineData.push({
       date: formattedDate,
-      cleanser,
       moisturizer,
+      cleanser,
       toner,
     });
     await user.save();
