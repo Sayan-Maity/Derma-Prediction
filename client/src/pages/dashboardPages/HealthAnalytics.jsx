@@ -241,6 +241,8 @@ const HealthAnalytics = () => {
         }
     }, [buttonInfoArray]);
 
+    console.log("length of array => ", buttonInfoArray.length);
+
     // Check if the button should be active based on the stored date :
     const checkButtonActivity = () => {
         const lastClickedDate = localStorage.getItem('buttonClickedDate');
@@ -341,7 +343,7 @@ const HealthAnalytics = () => {
                         <Heading fontSize="1.2rem" fontWeight="500" mb="1rem">Water Intake Analytics</Heading>
                         <Input _focus={{ border: `2px solid ${theme.colors.brand.primary_green_dark}` }} outline="none" type="number" value={waterQuantity} onChange={(e) => setWaterQuantity(e.target.value)} placeholder="Water (in litres)" />
                         <Button onClick={() => { submitWaterIntakeData(); handleButtonClick(1); }}
-                            isDisabled={!isButtonActive}
+                            isDisabled={!isButtonActive3}
                             backgroundColor={theme.colors.brand.primary_green_dark}
                             border="2px solid transparent"
                             _hover={{
@@ -371,7 +373,7 @@ const HealthAnalytics = () => {
                             </Checkbox>
                         </Flex>
                         <Button onClick={() => { submitDietData(); handleButtonClick(2); }}
-                            isDisabled={!isButtonActive}
+                            isDisabled={!isButtonActive2}
                             backgroundColor={theme.colors.brand.primary_green_dark}
                             border="2px solid transparent"
                             _hover={{
@@ -401,7 +403,7 @@ const HealthAnalytics = () => {
                             </Checkbox>
                         </Flex>
                         <Button onClick={() => { submitSkinCareData(); handleButtonClick(3); }}
-                            isDisabled={!isButtonActive}
+                            isDisabled={!isButtonActive4}
                             backgroundColor={theme.colors.brand.primary_green_dark}
                             border="2px solid transparent"
                             _hover={{
