@@ -9,7 +9,7 @@ import { NavLink } from 'react-router-dom';
 const Footer = () => {
   return (
     <Flex width="100%" alignItems="center" justifyContent="center" >
-      <Flex width={{ base: "full", xl: "1280px" }} borderTop="1px solid #bebebe" justifyContent="space-between" alignItems="center"  p="1rem 3rem">
+      <Flex width={{ base: "full", xl: "1280px" }} flexDir={{base:"column", xl:"row"}} gap={{base:"1rem", xl:"0"}} borderTop="1px solid #bebebe" justifyContent="space-between" alignItems="center"  p="1rem 3rem">
         <Flex alignItems="center" gap="0.3rem"><AiOutlineCopyrightCircle/> Copyright 2023 | All rights reserved</Flex>
         <Flex gap="0.5rem" fontSize="1.2rem">
           <NavLink to="https://www.linkedin.com/company/100044152/admin/feed/posts/" target="_blank"><BsLinkedin/></NavLink>
