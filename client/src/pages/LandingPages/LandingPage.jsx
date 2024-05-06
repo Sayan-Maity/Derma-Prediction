@@ -4,9 +4,6 @@
 import { Button, Flex, HStack, Image, Input, Text, Textarea, VStack, useTheme, useToast } from "@chakra-ui/react";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
-import LandingVector from "../../assets/images/LandingVector.png";
-import WhyChooseUs from "../../assets/images/WhyChooseUS.png";
-import ContactUs from "../../assets/images/ContactUs.png";
 import { useForm, ValidationError } from '@formspree/react';
 import { useNavigate } from "react-router-dom";
 import { PiStethoscopeFill } from "react-icons/pi";
