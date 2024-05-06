@@ -190,11 +190,17 @@ const DermaDetection = () => {
             Submit
           </Button> */}
 
-          <Button onClick={handleUpload} isLoading={loading} loadingText="Detecting..." backgroundColor={theme.colors.brand.primary_green_dark} border="2px solid transparent" _hover={{
-            backgroundColor: `${theme.colors.button.hover_light_backgroundColor}`,
-            color: `${theme.colors.button.hover_light_color}`,
-            border: `${theme.colors.button.hover_light_border}`
-          }} variant="unstyled" p="1.5rem" display="flex" color="#fff" borderRadius="30px">Submit</Button>
+          <Button
+            onClick={handleUpload}
+            isLoading={loading}
+            loadingText="Detecting..."
+            backgroundColor={theme.colors.brand.primary_green_dark}
+            border="2px solid transparent"
+            _hover={{
+              backgroundColor: `${theme.colors.button.hover_light_backgroundColor}`,
+              color: `${theme.colors.button.hover_light_color}`,
+              border: `${theme.colors.button.hover_light_border}`
+            }} variant="unstyled" p="1.5rem" display="flex" color="#fff" borderRadius="10px">Submit</Button>
         </Flex>
 
         <Flex width="60%" h="90vh" overflowY="auto">
