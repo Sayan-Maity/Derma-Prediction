@@ -41,10 +41,10 @@ const LandingPage = () => {
       <Navbar />
 
       {/* -------------------------------  Landing Section  -------------------------------- */}
-      <Flex width={{ base: "full", xl: "1280px" }} marginTop="6rem" p="3rem" justifyContent="space-between" flexDir="row" alignItems="center" h="100vh">
+      <Flex width={{ base: "full", xl: "1280px" }} marginTop={{ base: "20rem", xl: "6rem" }} p={{ base: "3rem 0.5rem", xl: "3rem" }} justifyContent="space-between" flexDir={{ base: "column-reverse", xl: "row" }} gap={{ base: "3rem", xl: "0rem" }} alignItems="center" h="100vh">
         <Flex width="50%" flexDir="column">
           <Text fontSize="4rem" lineHeight="10">AI Powered</Text>
-          <Text fontSize="4rem" display="flex" gap="0.5rem" alignItems="center">Skin Diagnosis <PiStethoscopeFill color="#81efcc" /></Text>
+          <Text fontSize="4rem" display="flex" gap="0.5rem" alignItems={{ base:"flex-end", xl:"center" }}>Skin Diagnosis <PiStethoscopeFill color="#81efcc" /></Text>
           <Text fontSize="1.4rem"> Explore the future of dermatological care with our AI-based tool <span style={{ color: "#3ce2ad", fontWeight: "500" }}>Dermify.AI</span> which harnesses the power of image processing to offer cost-effective and accessible skin condition assessments worldwide.</Text>
           <Button
             onClick={() => navigate("/private/derma-detection")}
@@ -73,7 +73,7 @@ const LandingPage = () => {
           </Button>
         </Flex>
         <Flex width="50%" alignItems="center" justifyContent="center">
-          <Image src={LandingVector} height="35rem" />
+          <Image src="https://ik.imagekit.io/sayancr777/tr:w-400/Dermify/LandingVector.png?updatedAt=1714966041467" height={{base:"80%", xl:"35rem"}} alt="doctor-vector" />
         </Flex>
       </Flex>
 
@@ -82,7 +82,7 @@ const LandingPage = () => {
         <SectionTitle title={LandingSectionTitle[1].title} description={LandingSectionTitle[1].description} />
 
         <HStack width={{ base: "full", xl: "1280px" }} p="3rem" flexWrap="wrap" gap="2rem 0" justifyContent="center" alignItems="center">
-          
+
           <HStack w="full" justifyContent="center" gap="3rem 1rem" >
             <FeaturedCard featuredItem={FeaturedCardContent[0]} />
             <FeaturedCard featuredItem={FeaturedCardContent[1]} />
@@ -107,7 +107,7 @@ const LandingPage = () => {
 
       <Flex width={{ base: "full", xl: "1280px" }} p="3rem" justifyContent="space-between" flexDir="row" alignItems="flex-start" >
         <Flex width="50%" alignItems="center" justifyContent="center">
-          <Image src={WhyChooseUs} height="30rem" />
+          <Image src="https://ik.imagekit.io/sayancr777/tr:w-400/Dermify/WhyChooseUS.png?updatedAt=1714965959564" height="30rem" alt="choose-us" />
         </Flex>
         <VStack width="50%" alignItems="flex-start" >
           <VStack gap="0" alignItems="flex-start">
@@ -171,7 +171,7 @@ const LandingPage = () => {
           </form>
         </Flex>
         <Flex width="50%" alignItems="center" justifyContent="center">
-          <Image src={ContactUs} height="30rem" />
+          <Image src="https://ik.imagekit.io/sayancr777/tr:w-400/Dermify/ContactUs.png?updatedAt=1714965927940" height="30rem" alt="contact-us" />
         </Flex>
       </Flex>
 
