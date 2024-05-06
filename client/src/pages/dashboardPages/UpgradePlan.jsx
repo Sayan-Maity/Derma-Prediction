@@ -44,8 +44,9 @@ const UpgradePlan = () => {
         checkSubscription()
     }, [])
 
-    const handleUpgradePlan = async () => {
-        const amount = Number(50000);
+    const handleUpgradePlan = async (amt) => {
+        let tempAmount = Number(amt)
+        const amount = amt * 100;
         try {
             const resp = await axios.post(`${process.env.REACT_APP_SERVER_URL}/api/checkout`, {
                 amount
@@ -70,7 +71,7 @@ const UpgradePlan = () => {
                             razorpay_order_id: resp.razorpay_order_id,
                             razorpay_payment_id: resp.razorpay_payment_id,
                             razorpay_signature: resp.razorpay_signature,
-                            amount: Number(400),
+                            amount: amount,
                             plan_type: "Basic"
                         }, {
                             headers: {
@@ -149,14 +150,14 @@ const UpgradePlan = () => {
                                 </HStack>
                                 <HStack alignItems="center">
                                     <Flex mt="-0.5rem" p="0.2rem" bg="#e2e8f0" borderRadius="50%"><FaCheck color='#475569' fontSize="0.9rem" /></Flex>
-                                    <Text>Rs. 400 only per consultation</Text>
+                                    <Text>Rs. 500 only per consultation</Text>
                                 </HStack>
                             </VStack>
                         </VStack>
                         <VStack w="full">
                             <Button
                                 w="full"
-                                onClick={handleUpgradePlan}
+                                onClick={() => handleUpgradePlan(500)}
                                 // isDisabled={isSubscribed}
                                 backgroundColor={theme.colors.brand.primary_green_dark}
                                 border="2px solid transparent"
@@ -170,7 +171,7 @@ const UpgradePlan = () => {
                                 display="flex"
                                 color="#fff"
                                 borderRadius="0.5rem"
-                            >Upgrade (Pay 400)</Button>
+                            >Upgrade (Pay 500)</Button>
                         </VStack>
                     </VStack>
                     <VStack
@@ -208,7 +209,7 @@ const UpgradePlan = () => {
                         <VStack w="full">
                             <Button
                                 w="full"
-                                onClick={handleUpgradePlan}
+                                onClick={() => handleUpgradePlan(3000)}
                                 // isDisabled={isSubscribed}
                                 backgroundColor={theme.colors.brand.primary_green_dark}
                                 border="2px solid transparent"

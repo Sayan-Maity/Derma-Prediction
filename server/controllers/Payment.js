@@ -10,7 +10,7 @@ const instance = new Razorpay({
 module.exports.checkout = async (req, res) => {
   const { amount } = req.body;
 
-  const convertedAmount = Number(amount * 100);
+  const convertedAmount = Number(amount);
   const options = {
     amount: convertedAmount, // paisa
     currency: "INR",
