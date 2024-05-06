@@ -243,7 +243,7 @@ const Dashboard = () => {
       },
       {
         label: "Moisturizer",
-        data: dietData?.map((data) => data.toner),
+        data: dietData?.map((data) => data.moizturizer),
         borderWidth: 2,
         backgroundColor: "red",
         borderColor: 'red',
