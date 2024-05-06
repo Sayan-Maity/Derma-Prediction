@@ -219,11 +219,11 @@ const Dashboard = () => {
     },
   };
   const jsonData4 = {
-    labels: dietData?.map((data) => data.date),
+    labels: skinCareData?.map((data) => data.date),
     datasets: [
       {
         label: "Cleanser",
-        data: dietData?.map((data) => data.cleanser),
+        data: skinCareData?.map((data) => data.cleanser),
         borderWidth: 2,
         backgroundColor: "#3ce2ad",
         borderColor: '#3ce2ad',
@@ -233,7 +233,7 @@ const Dashboard = () => {
       },
       {
         label: "Toner",
-        data: dietData?.map((data) => data.toner),
+        data: skinCareData?.map((data) => data.toner),
         borderWidth: 2,
         backgroundColor: "#0078aa",
         borderColor: '#0078aa',
@@ -243,7 +243,7 @@ const Dashboard = () => {
       },
       {
         label: "Moisturizer",
-        data: dietData?.map((data) => data.moizturizer),
+        data: skinCareData?.map((data) => data.moisturizer),
         borderWidth: 2,
         backgroundColor: "red",
         borderColor: 'red',
