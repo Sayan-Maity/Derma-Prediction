@@ -328,7 +328,7 @@ const HealthAnalytics = () => {
                                 backgroundColor: `${!isButtonActive? "none" : theme.colors.button.hover_light_backgroundColor}`,
                                 color: `${!isButtonActive? "none" : theme.colors.button.hover_light_color}`,
                                 border: `${theme.colors.button.hover_light_border}`
-                            }} variant="unstyled" p="1.5rem" display="flex" color="#fff" borderRadius="30px">Submit</Button>
+                            }} variant="unstyled" p="1.5rem" display="flex" color="#fff" borderRadius="10px">Submit</Button>
                     </ModalBody>
                 </ModalContent>
             </Modal>
@@ -348,7 +348,7 @@ const HealthAnalytics = () => {
                                 backgroundColor: `${!isButtonActive? "none" : theme.colors.button.hover_light_backgroundColor}`,
                                 color: `${!isButtonActive? "none" : theme.colors.button.hover_light_color}`,
                                 border: `${theme.colors.button.hover_light_border}`
-                            }} variant="unstyled" p="1.5rem" display="flex" color="#fff" borderRadius="30px">Submit</Button>
+                            }} variant="unstyled" p="1.5rem" display="flex" color="#fff" borderRadius="10px">Submit</Button>
                     </ModalBody>
                 </ModalContent>
             </Modal>
@@ -378,7 +378,7 @@ const HealthAnalytics = () => {
                                 backgroundColor: `${!isButtonActive? "none" : theme.colors.button.hover_light_backgroundColor}`,
                                 color: `${!isButtonActive? "none" : theme.colors.button.hover_light_color}`,
                                 border: `${theme.colors.button.hover_light_border}`
-                            }} variant="unstyled" p="1.5rem" display="flex" color="#fff" borderRadius="30px">Submit</Button>
+                            }} variant="unstyled" p="1.5rem" display="flex" color="#fff" borderRadius="10px">Submit</Button>
                     </ModalBody>
                 </ModalContent>
             </Modal>
@@ -408,7 +408,7 @@ const HealthAnalytics = () => {
                                 backgroundColor: `${!isButtonActive? "none" : theme.colors.button.hover_light_backgroundColor}`,
                                 color: `${!isButtonActive? "none" : theme.colors.button.hover_light_color}`,
                                 border: `${theme.colors.button.hover_light_border}`
-                            }} variant="unstyled" p="1.5rem" display="flex" color="#fff" borderRadius="30px">Submit</Button>
+                            }} variant="unstyled" p="1.5rem" display="flex" color="#fff" borderRadius="10px">Submit</Button>
                     </ModalBody>
                 </ModalContent>
             </Modal>
