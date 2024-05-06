@@ -298,15 +298,12 @@ const HealthAnalytics = () => {
                 <Flex onClick={onOpenLifestyleModal} backgroundColor={theme.colors.brand.primary_green_light} borderRadius="1rem" overflow="hidden" cursor="pointer">
                     <Image src={Lifestyle} h="full" w="full" />
                 </Flex>
-
                 <Flex onClick={onOpenWaterIntakeModal} backgroundColor={theme.colors.brand.primary_blue_light} borderRadius="1rem" overflow="hidden" cursor="pointer">
                     <Image src={WaterIntakeImage} h="full" w="full" />
                 </Flex>
-
                 <Flex onClick={onOpenDietModal} backgroundColor={theme.colors.brand.primary_blue_light} borderRadius="1rem" overflow="hidden" cursor="pointer">
                     <Image src={Diet} h="full" w="full" />
                 </Flex>
-
                 <Flex onClick={onOpenSkinCareModal} backgroundColor={theme.colors.brand.primary_green_light} borderRadius="1rem" overflow="hidden" cursor="pointer">
                     <Image src={SkinCare} h="full" w="full" />
                 </Flex>
@@ -328,8 +325,8 @@ const HealthAnalytics = () => {
                             backgroundColor={theme.colors.brand.primary_green_dark}
                             border="2px solid transparent"
                             _hover={{
-                                backgroundColor: `${theme.colors.button.hover_light_backgroundColor}`,
-                                color: `${theme.colors.button.hover_light_color}`,
+                                backgroundColor: `${!isButtonActive? "none" : theme.colors.button.hover_light_backgroundColor}`,
+                                color: `${!isButtonActive? "none" : theme.colors.button.hover_light_color}`,
                                 border: `${theme.colors.button.hover_light_border}`
                             }} variant="unstyled" p="1.5rem" display="flex" color="#fff" borderRadius="30px">Submit</Button>
                     </ModalBody>
@@ -343,11 +340,15 @@ const HealthAnalytics = () => {
                     <ModalBody display="flex" flexDir="column" gap="1rem">
                         <Heading fontSize="1.2rem" fontWeight="500" mb="1rem">Water Intake Analytics</Heading>
                         <Input _focus={{ border: `2px solid ${theme.colors.brand.primary_green_dark}` }} outline="none" type="number" value={waterQuantity} onChange={(e) => setWaterQuantity(e.target.value)} placeholder="Water (in litres)" />
-                        <Button onClick={() => { submitWaterIntakeData(); handleButtonClick(1); }} backgroundColor={theme.colors.brand.primary_green_dark} border="2px solid transparent" _hover={{
-                            backgroundColor: `${theme.colors.button.hover_light_backgroundColor}`,
-                            color: `${theme.colors.button.hover_light_color}`,
-                            border: `${theme.colors.button.hover_light_border}`
-                        }} variant="unstyled" p="1.5rem" display="flex" color="#fff" borderRadius="30px">Submit</Button>
+                        <Button onClick={() => { submitWaterIntakeData(); handleButtonClick(1); }}
+                            isDisabled={!isButtonActive}
+                            backgroundColor={theme.colors.brand.primary_green_dark}
+                            border="2px solid transparent"
+                            _hover={{
+                                backgroundColor: `${!isButtonActive? "none" : theme.colors.button.hover_light_backgroundColor}`,
+                                color: `${!isButtonActive? "none" : theme.colors.button.hover_light_color}`,
+                                border: `${theme.colors.button.hover_light_border}`
+                            }} variant="unstyled" p="1.5rem" display="flex" color="#fff" borderRadius="30px">Submit</Button>
                     </ModalBody>
                 </ModalContent>
             </Modal>
@@ -369,11 +370,15 @@ const HealthAnalytics = () => {
                                 Fruit
                             </Checkbox>
                         </Flex>
-                        <Button onClick={() => { submitDietData(); handleButtonClick(2); }} backgroundColor={theme.colors.brand.primary_green_dark} border="2px solid transparent" _hover={{
-                            backgroundColor: `${theme.colors.button.hover_light_backgroundColor}`,
-                            color: `${theme.colors.button.hover_light_color}`,
-                            border: `${theme.colors.button.hover_light_border}`
-                        }} variant="unstyled" p="1.5rem" display="flex" color="#fff" borderRadius="30px">Submit</Button>
+                        <Button onClick={() => { submitDietData(); handleButtonClick(2); }}
+                            isDisabled={!isButtonActive}
+                            backgroundColor={theme.colors.brand.primary_green_dark}
+                            border="2px solid transparent"
+                            _hover={{
+                                backgroundColor: `${!isButtonActive? "none" : theme.colors.button.hover_light_backgroundColor}`,
+                                color: `${!isButtonActive? "none" : theme.colors.button.hover_light_color}`,
+                                border: `${theme.colors.button.hover_light_border}`
+                            }} variant="unstyled" p="1.5rem" display="flex" color="#fff" borderRadius="30px">Submit</Button>
                     </ModalBody>
                 </ModalContent>
             </Modal>
@@ -395,11 +400,15 @@ const HealthAnalytics = () => {
                                 Toner
                             </Checkbox>
                         </Flex>
-                        <Button onClick={() => { submitSkinCareData(); handleButtonClick(3); }} backgroundColor={theme.colors.brand.primary_green_dark} border="2px solid transparent" _hover={{
-                            backgroundColor: `${theme.colors.button.hover_light_backgroundColor}`,
-                            color: `${theme.colors.button.hover_light_color}`,
-                            border: `${theme.colors.button.hover_light_border}`
-                        }} variant="unstyled" p="1.5rem" display="flex" color="#fff" borderRadius="30px">Submit</Button>
+                        <Button onClick={() => { submitSkinCareData(); handleButtonClick(3); }}
+                            isDisabled={!isButtonActive}
+                            backgroundColor={theme.colors.brand.primary_green_dark}
+                            border="2px solid transparent"
+                            _hover={{
+                                backgroundColor: `${!isButtonActive? "none" : theme.colors.button.hover_light_backgroundColor}`,
+                                color: `${!isButtonActive? "none" : theme.colors.button.hover_light_color}`,
+                                border: `${theme.colors.button.hover_light_border}`
+                            }} variant="unstyled" p="1.5rem" display="flex" color="#fff" borderRadius="30px">Submit</Button>
                     </ModalBody>
                 </ModalContent>
             </Modal>
