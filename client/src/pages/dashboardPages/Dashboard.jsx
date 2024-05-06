@@ -67,6 +67,8 @@ const Dashboard = () => {
 
   }, [WaterIntakeData, LifeStyleData, DietData, SkinCareData]);
 
+  console.log("Skincare data =>", skinCareData);
+
 
   const jsonData = {
     labels: lifeStyleData?.map((data) => data.date),
