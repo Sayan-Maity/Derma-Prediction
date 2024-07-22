@@ -1,5 +1,5 @@
 
-import { Button, Checkbox, Flex, Heading, Image, Input, useDisclosure, useTheme, useToast } from '@chakra-ui/react'
+import { Button, Checkbox, Flex, Grid, GridItem, Heading, Image, Input, Text, useDisclosure, useTheme, useToast } from '@chakra-ui/react'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
 import Cookies from 'js-cookie'
@@ -16,6 +16,8 @@ import WaterIntakeImage from '../../assets/svgs/WaterIntake.png'
 import Diet from '../../assets/svgs/Diet.png'
 import Lifestyle from '../../assets/svgs/Lifestyle.png'
 import SkinCare from '../../assets/svgs/SkinCare.png'
+import DashboardTabTitle from '../../components/dashboardTabTitle/DashboardTabTitle'
+import CustomAccordion from '../../components/customAccordion/CustomAccordion'
 
 const HealthAnalytics = () => {
     const theme = useTheme()
@@ -295,21 +297,66 @@ const HealthAnalytics = () => {
 
     return (
         <DashboardWrapper>
-            <Flex flexDir="row" width="100%" alignItems="flex-start" justifyContent="flex-start" gap="2rem" flexWrap="wrap">
+            <DashboardTabTitle
+                title="Daily Health Analysis Forms"
+                desc=""
+            />
 
-                <Flex onClick={onOpenLifestyleModal} backgroundColor={theme.colors.brand.primary_green_light} borderRadius="1rem" overflow="hidden" cursor="pointer" opacity="1" _hover={{opacity: "0.9"}}>
-                    <Image src={Lifestyle} h="full" w="full" />
+            <Flex flexDir="row" width="100%" alignItems="flex-start" justifyContent="flex-start" gap="2rem">
+                <Grid
+                    templateColumns={{base: "repeat(1, 1fr)", lg:"repeat(2, 1fr)"}}
+                    gap="2rem"
+                    width="100%"
+                >
+                    <GridItem
+                        onClick={onOpenLifestyleModal}
+                        backgroundColor={theme.colors.brand.primary_green_light}
+                        borderRadius="1rem"
+                        overflow="hidden"
+                        cursor="pointer"
+                        opacity="1"
+                        _hover={{ opacity: "0.9" }}
+                    >
+                        <Image src={Lifestyle} h="full" w="full" />
+                    </GridItem>
+                    <GridItem
+                        onClick={onOpenWaterIntakeModal}
+                        backgroundColor={theme.colors.brand.primary_blue_light}
+                        borderRadius="1rem"
+                        overflow="hidden"
+                        cursor="pointer"
+                        opacity="1"
+                        _hover={{ opacity: "0.9" }}
+                    >
+                        <Image src={WaterIntakeImage} h="full" w="full" />
+                    </GridItem>
+                    <GridItem
+                        onClick={onOpenDietModal}
+                        backgroundColor={theme.colors.brand.primary_blue_light}
+                        borderRadius="1rem"
+                        overflow="hidden"
+                        cursor="pointer"
+                        opacity="1"
+                        _hover={{ opacity: "0.9" }}
+                    >
+                        <Image src={Diet} h="full" w="full" />
+                    </GridItem>
+                    <GridItem
+                        onClick={onOpenSkinCareModal}
+                        backgroundColor={theme.colors.brand.primary_green_light}
+                        borderRadius="1rem"
+                        overflow="hidden"
+                        cursor="pointer"
+                        opacity="1"
+                        _hover={{ opacity: "0.9" }}
+                    >
+                        <Image src={SkinCare} h="full" w="full" />
+                    </GridItem>
+                </Grid>
+                <Flex className='divider' height="full" bg="#dedede" w="1px" display={{base: "none", md: "flex"}}></Flex>
+                <Flex width="25rem" display={{base: "none", md: "flex"}} >
+                    <CustomAccordion />
                 </Flex>
-                <Flex onClick={onOpenWaterIntakeModal} backgroundColor={theme.colors.brand.primary_blue_light} borderRadius="1rem" overflow="hidden" cursor="pointer" opacity="1" _hover={{opacity: "0.9"}}>
-                    <Image src={WaterIntakeImage} h="full" w="full" />
-                </Flex>
-                <Flex onClick={onOpenDietModal} backgroundColor={theme.colors.brand.primary_blue_light} borderRadius="1rem" overflow="hidden" cursor="pointer" opacity="1" _hover={{opacity: "0.9"}}>
-                    <Image src={Diet} h="full" w="full" />
-                </Flex>
-                <Flex onClick={onOpenSkinCareModal} backgroundColor={theme.colors.brand.primary_green_light} borderRadius="1rem" overflow="hidden" cursor="pointer" opacity="1" _hover={{opacity: "0.9"}}>
-                    <Image src={SkinCare} h="full" w="full" />
-                </Flex>
-
             </Flex>
 
             <Modal isOpen={isOpenLifestyleModal} onClose={onCloseLifestyleModal} isCentered>
@@ -327,8 +374,8 @@ const HealthAnalytics = () => {
                             backgroundColor={theme.colors.brand.primary_green_dark}
                             border="2px solid transparent"
                             _hover={{
-                                backgroundColor: `${!isButtonActive? "none" : theme.colors.button.hover_light_backgroundColor}`,
-                                color: `${!isButtonActive? "none" : theme.colors.button.hover_light_color}`,
+                                backgroundColor: `${!isButtonActive ? "none" : theme.colors.button.hover_light_backgroundColor}`,
+                                color: `${!isButtonActive ? "none" : theme.colors.button.hover_light_color}`,
                                 border: `${theme.colors.button.hover_light_border}`
                             }} variant="unstyled" p="1.5rem" display="flex" color="#fff" borderRadius="10px">Submit</Button>
                     </ModalBody>
@@ -347,8 +394,8 @@ const HealthAnalytics = () => {
                             backgroundColor={theme.colors.brand.primary_green_dark}
                             border="2px solid transparent"
                             _hover={{
-                                backgroundColor: `${!isButtonActive? "none" : theme.colors.button.hover_light_backgroundColor}`,
-                                color: `${!isButtonActive? "none" : theme.colors.button.hover_light_color}`,
+                                backgroundColor: `${!isButtonActive ? "none" : theme.colors.button.hover_light_backgroundColor}`,
+                                color: `${!isButtonActive ? "none" : theme.colors.button.hover_light_color}`,
                                 border: `${theme.colors.button.hover_light_border}`
                             }} variant="unstyled" p="1.5rem" display="flex" color="#fff" borderRadius="10px">Submit</Button>
                     </ModalBody>
@@ -377,8 +424,8 @@ const HealthAnalytics = () => {
                             backgroundColor={theme.colors.brand.primary_green_dark}
                             border="2px solid transparent"
                             _hover={{
-                                backgroundColor: `${!isButtonActive? "none" : theme.colors.button.hover_light_backgroundColor}`,
-                                color: `${!isButtonActive? "none" : theme.colors.button.hover_light_color}`,
+                                backgroundColor: `${!isButtonActive ? "none" : theme.colors.button.hover_light_backgroundColor}`,
+                                color: `${!isButtonActive ? "none" : theme.colors.button.hover_light_color}`,
                                 border: `${theme.colors.button.hover_light_border}`
                             }} variant="unstyled" p="1.5rem" display="flex" color="#fff" borderRadius="10px">Submit</Button>
                     </ModalBody>
@@ -407,8 +454,8 @@ const HealthAnalytics = () => {
                             backgroundColor={theme.colors.brand.primary_green_dark}
                             border="2px solid transparent"
                             _hover={{
-                                backgroundColor: `${!isButtonActive? "none" : theme.colors.button.hover_light_backgroundColor}`,
-                                color: `${!isButtonActive? "none" : theme.colors.button.hover_light_color}`,
+                                backgroundColor: `${!isButtonActive ? "none" : theme.colors.button.hover_light_backgroundColor}`,
+                                color: `${!isButtonActive ? "none" : theme.colors.button.hover_light_color}`,
                                 border: `${theme.colors.button.hover_light_border}`
                             }} variant="unstyled" p="1.5rem" display="flex" color="#fff" borderRadius="10px">Submit</Button>
                     </ModalBody>

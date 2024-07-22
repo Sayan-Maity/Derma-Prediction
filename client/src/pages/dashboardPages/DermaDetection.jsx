@@ -14,6 +14,7 @@ import {
 } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import DashboardWrapper from "../../components/DashboardWrapper";
+import DashboardTabTitle from "../../components/dashboardTabTitle/DashboardTabTitle";
 
 const DermaDetection = () => {
   const theme = useTheme();
@@ -123,8 +124,12 @@ const DermaDetection = () => {
 
   return (
     <DashboardWrapper>
-      <Flex gap="2rem" width="100%" alignItems="flex-start" flexDir={{base: "column", md: "row"}}>
-        <Flex flexDir="column" width={{base: "100%", md: "40%"}} gap="1rem">
+      <DashboardTabTitle
+        title="My Derma-Detection"
+        desc=""
+      />
+      <Flex gap="2rem" width="100%" alignItems="flex-start" flexDir={{ base: "column", md: "row" }}>
+        <Flex flexDir="column" width={{ base: "100%", md: "40%" }} gap="1rem">
           <label
             htmlFor="imageFile"
             className="custom-imageFile-input-magicWand"
@@ -199,7 +204,7 @@ const DermaDetection = () => {
             }} variant="unstyled" p="1.5rem" display="flex" color="#fff" borderRadius="10px">Submit</Button>
         </Flex>
 
-        <Flex width={{base: "100%", md: "60%"}} h={{base: "full", md: "90vh"}} overflowY="auto">
+        <Flex width={{ base: "100%", md: "60%" }} h="full" overflowY="auto">
           <Flex gap="1rem" flexDir="column" width="100%">
             <Flex
               flexDir="column"

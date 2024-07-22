@@ -5,6 +5,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { BsSearch } from "react-icons/bs";
 import DashboardWrapper from "../../components/DashboardWrapper";
+import DashboardTabTitle from "../../components/dashboardTabTitle/DashboardTabTitle";
 
 const Page3 = () => {
   const toast = useToast();
@@ -61,7 +62,6 @@ const Page3 = () => {
   const [initialItems, setInitialItems] = useState([]);
 
   useEffect(() => {
-    // Initialize filteredItems and initialItems with all items initially
     setFilteredItems(SkinDiseaseItems);
     setInitialItems(SkinDiseaseItems);
   }, []);
@@ -106,8 +106,12 @@ const Page3 = () => {
 
   return (
     <DashboardWrapper >
-      <Flex width="100%" gap="1rem" alignItems="flex-start" flexDir={{base: "column", md: "row"}}>
-        <Flex width={{base: "100%", md: "40%"}} h={{base: "67vh", md: "90vh"}}  maxH="100vh" flexDir="column" alignItems="center" pr="1rem" gap="1rem" overflowY="auto">
+      <DashboardTabTitle
+        title="Explore Derma-Disease"
+        desc=""
+      />
+      <Flex width="100%" gap="1rem" alignItems="flex-start" flexDir={{ base: "column", md: "row" }}>
+        <Flex width={{ base: "100%", md: "40%" }} h={{ base: "67vh", md: "85vh" }} maxH="100vh" flexDir="column" alignItems="center" pr="1rem" gap="1rem" overflowY="auto">
           <Flex gap="1rem" w="100%">
             <Input type="text" placeholder="Search here ..." value={searchText} onChange={handleFilterSkinDisease} _focus={{ border: `1px solid ${theme.colors.brand.primary_green_dark}` }} />
             <Button onClick={() => handleOpenAIApiCall(searchText)} isLoading={loading}><BsSearch /></Button>
@@ -121,7 +125,7 @@ const Page3 = () => {
             ))}
           </Flex>
         </Flex>
-        <Flex color="#333" width={{base: "100%", md: "60%"}} h={{base: "full", md: "90vh"}} overflowY="auto" alignItems="flex-start" justifyContent="flex-start" p={{base: "0", md:"0 1rem"}}>
+        <Flex color="#333" width={{ base: "100%", md: "60%" }} h={{ base: "full", md: "90vh" }} overflowY="auto" alignItems="flex-start" justifyContent="flex-start" p={{ base: "0", md: "0 1rem" }}>
           {!diseaseInformation?.description !== "" && (
             <Flex width="100%" h="90vh" overflowY="auto">
               <Flex gap="1rem" flexDir="column" width="100%">

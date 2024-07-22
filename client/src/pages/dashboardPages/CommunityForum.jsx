@@ -6,6 +6,7 @@ import RenderedContent from '../../components/RenderedContent';
 import DashboardWrapper from '../../components/DashboardWrapper';
 import { postCommunityForum } from '../../services/community-forum/postCommunityForum';
 import { getBlogPosts } from '../../services/community-forum/getBlogPosts';
+import DashboardTabTitle from '../../components/dashboardTabTitle/DashboardTabTitle';
 const CommunityForum = () => {
     const toast = useToast();
     const theme = useTheme()
@@ -55,7 +56,7 @@ const CommunityForum = () => {
                     isClosable: true,
                     duration: 2000,
                     status: "success",
-                  });
+                });
                 setBlogAuthor('');
                 setBlogTitle('');
                 setBlogBannerImage('');
@@ -117,6 +118,10 @@ const CommunityForum = () => {
 
     return (
         <DashboardWrapper>
+            <DashboardTabTitle
+                title="Community Forum"
+                desc=""
+            />
             <Modal isOpen={checkIsOpenModal} onClose={closeModal} isCentered size="4xl">
                 <ModalOverlay />
                 <ModalContent width="100%" borderRadius={"20px"}>
@@ -146,10 +151,10 @@ const CommunityForum = () => {
                 </ModalContent>
             </Modal>
 
-            <Flex flexDir="row" h="90vh" width="100%" alignItems="center" justifyContent="center" gap="1rem">
+            <Flex flexDir="row" h="82vh" width="100%" alignItems="center" justifyContent="center" gap="1rem">
 
                 <VStack width="40%" borderRight="1px solid #e4e6ea" alignItems="flex-start" justifyContent="flex-start" gap="1rem">
-                    <Heading fontSize="2rem">Check what World wants to share</Heading>
+                    <Text fontSize="1.5rem">View all Stories</Text>
                     <Flex w="100%" flexDir="column" alignItems="center" pr="1rem" gap="1rem" maxH="100vh" h="80vh" overflowY="auto" >
                         {blogPosts.length === 0 ? (
                             <VStack height="100%" alignItems="center" justifyContent="center">
@@ -165,7 +170,7 @@ const CommunityForum = () => {
                                             backgroundColor: `${theme.colors.button.hover_light_backgroundColor}`,
                                             color: `${theme.colors.button.hover_light_color}`,
                                             border: `${theme.colors.button.hover_light_border}`
-                                        }} variant="unstyled" p="1.5rem" display="flex" color="#fff" borderRadius="30px">View Post</Button>
+                                        }} variant="unstyled" p="1.5rem" display="flex" color="#fff" borderRadius="10px">View Post</Button>
                                     </Flex>
                                 </Flex>
                             ))
@@ -173,17 +178,27 @@ const CommunityForum = () => {
                     </Flex>
                 </VStack>
 
-                <VStack width="100%" maxH="100vh" h="90vh" alignItems="flex-start" justifyContent="flex-start" p="0 1rem">
+                <VStack width="100%" maxH="100vh" h="90vh" alignItems="flex-start" justifyContent="flex-start" p="1rem">
                     <Flex justifyContent="space-between" w="100%">
                         <Flex>
-                            <Heading fontSize="2rem">Share your story !</Heading>
+                            <Text fontSize="1.5rem">Share your Own Story !</Text>
                         </Flex>
                         <Flex>
-                            <Button onClick={handleSaveClick} backgroundColor={theme.colors.brand.primary_green_dark} border="2px solid transparent" _hover={{
-                                backgroundColor: `${theme.colors.button.hover_light_backgroundColor}`,
-                                color: `${theme.colors.button.hover_light_color}`,
-                                border: `${theme.colors.button.hover_light_border}`
-                            }} variant="unstyled" p="1.5rem" display="flex" color="#fff" borderRadius="30px">Post Story</Button>
+                            <Button
+                                onClick={handleSaveClick}
+                                backgroundColor={theme.colors.brand.primary_green_dark}
+                                border="2px solid transparent"
+                                _hover={{
+                                    backgroundColor: `${theme.colors.button.hover_light_backgroundColor}`,
+                                    color: `${theme.colors.button.hover_light_color}`,
+                                    border: `${theme.colors.button.hover_light_border}`
+                                }}
+                                variant="unstyled"
+                                p="1.5rem"
+                                display="flex"
+                                color="#fff"
+                                borderRadius="10px"
+                            >Post Story</Button>
                         </Flex>
                     </Flex>
                     <Flex flexDir="column" gap="1rem" m="1rem 0" w="100%">

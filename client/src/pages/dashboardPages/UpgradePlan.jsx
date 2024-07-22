@@ -9,6 +9,7 @@ import { useNavigate } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import { BsStars } from "react-icons/bs";
 import { FaCheck } from "react-icons/fa6";
+import DashboardTabTitle from '../../components/dashboardTabTitle/DashboardTabTitle'
 
 const UpgradePlan = () => {
     const theme = useTheme()
@@ -110,7 +111,7 @@ const UpgradePlan = () => {
     }
 
     // useEffect(() => {
-        
+
 
     // }, [])
 
@@ -118,6 +119,10 @@ const UpgradePlan = () => {
 
     return (
         <DashboardWrapper>
+            <DashboardTabTitle
+                title="Upgrade Plan"
+                desc=""
+            />
             <Flex gap="2rem" width="1200px" alignItems="flex-start" flexDir="column">
                 <Heading fontSize="2rem"> Upgrade your Plan </Heading>
                 <HStack w="full" alignItems="center" justifyContent="center" gap="1.5rem">

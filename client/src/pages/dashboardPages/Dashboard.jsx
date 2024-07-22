@@ -19,6 +19,7 @@ import {
   Legend,
 
 } from 'chart.js';
+import DashboardTabTitle from '../../components/dashboardTabTitle/DashboardTabTitle';
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -282,8 +283,11 @@ const Dashboard = () => {
 
   return (
     <DashboardWrapper>
+        <DashboardTabTitle
+          title="Dashboard"
+          desc=""
+        />
       <Flex gap="2rem" width="100%" alignItems="flex-start" flexDir="column" >
-        <Heading fontSize="2rem"> Your Dashboard </Heading>
         <Flex flexDir="column" border="1px solid #74809a" p="1rem 2rem" borderRadius="5px">
           <HStack>
             <IconStar width={"1.5rem"} height={"1.5rem"} colorStroke={"#3ce2ad"} />
