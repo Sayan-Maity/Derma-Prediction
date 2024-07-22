@@ -85,7 +85,7 @@ const Dashboard = () => {
         label: "Sleep",
         data: lifeStyleData?.map((data) => data.sleep),
         borderWidth: 2,
-        backgroundColor: "#3ce2ad",
+        backgroundColor: "#3ce2ad72",
         borderColor: '#3ce2ad',
         fill: false,
         tension: 0.8, //curve
@@ -95,7 +95,7 @@ const Dashboard = () => {
         label: "Exercise",
         data: lifeStyleData?.map((data) => data.exercise),
         borderWidth: 2,
-        backgroundColor: "#0078aa",
+        backgroundColor: "#0078aa72",
         borderColor: '#0078aa',
         fill: false,
         tension: 0.8, //curve
@@ -105,8 +105,8 @@ const Dashboard = () => {
         label: "Sunlight Exposure",
         data: lifeStyleData?.map((data) => data.sunlight),
         borderWidth: 2,
-        backgroundColor: "red",
-        borderColor: 'red',
+        backgroundColor: "#d3d3d372",
+        borderColor: '#d3d3d3',
         fill: false,
         tension: 0.8, //curve
         cubicInterpolationMode: 'monotone',
@@ -119,13 +119,11 @@ const Dashboard = () => {
       x: {
         title: {
           display: true,
-          text: 'Date',
         },
       },
       y: {
         title: {
           display: true,
-          text: 'Time (hours)',
         },
         min: 0,
         max: 10
@@ -155,13 +153,11 @@ const Dashboard = () => {
       x: {
         title: {
           display: true,
-          text: 'Date',
         },
       },
       y: {
         title: {
           display: true,
-          text: 'Water (Litres)',
         },
         min: 0,
         max: 6
@@ -215,14 +211,12 @@ const Dashboard = () => {
         stacked: true,
         title: {
           display: true,
-          text: 'Date',
         },
       },
       y: {
         stacked: true,
         title: {
           display: true,
-          text: 'Food Comsumption (boolean)',
         },
         min: 0,
         max: 4
@@ -273,14 +267,12 @@ const Dashboard = () => {
         stacked: true,
         title: {
           display: true,
-          text: 'Date',
         },
       },
       y: {
         stacked: true,
         title: {
           display: true,
-          text: 'Skin Care Done (boolean)',
         },
         min: 0,
         max: 4
@@ -290,68 +282,67 @@ const Dashboard = () => {
 
   return (
     <DashboardWrapper>
-      <Flex gap="2rem" width="1200px" alignItems="flex-start" flexDir="column">
+      <Flex gap="2rem" width="100%" alignItems="flex-start" flexDir="column">
         <Heading fontSize="2rem"> Your Dashboard </Heading>
         <Flex flexDir="column" border="1px solid #74809a" p="1rem 2rem" borderRadius="5px">
-          <HStack >
-            <IconStar
-              width={"1.5rem"}
-              height={"1.5rem"}
-              colorStroke={"#3ce2ad"}
-            />
+          <HStack>
+            <IconStar width={"1.5rem"} height={"1.5rem"} colorStroke={"#3ce2ad"} />
             <Text fontSize="1.2rem" fontWeight={"bold"} color={theme.colors.brand.primary_green_dark}>Tip of the day</Text>
           </HStack>
           <Text>{currentString.title} :</Text>
           <Text>{currentString.description}</Text>
         </Flex>
 
-        <Flex w="100%" >
-          {lifeStyleData?.length > 0 || waterIntakeData?.length > 0 || dietData?.length > 0 || skinCareData > 0 ? (
-            <VStack w="100%" gap="1rem">
-              <HStack w="100%">
+        <Flex w="100%" h="100%">
+          {lifeStyleData?.length > 0 || waterIntakeData?.length > 0 || dietData?.length > 0 || skinCareData?.length > 0 ? (
+            <Flex flexDir="column" w="100%" gap="2rem">
+              <Flex w="100%" gap="2rem" flexDir={{ base: "column", md: "row" }}>
                 {/* ---------  Lifestyle Graph  -------- */}
                 {lifeStyleData?.length > 0 && (
-                  <Flex w="50%" h="30rem" >
+                  <Flex flexDir="column" gap="1rem" w={{ base: "100%", md: "50%" }} h="30rem" p="3rem 2rem" shadow="0 4px 8px rgba(0, 0, 0, 0.2)" borderRadius="10px">
+                    <Text fontSize="1.2rem">My Lifestyle Reports</Text>
                     <Line ref={canvasRef} data={jsonData} options={options} height="30rem" width="100%" />
                   </Flex>
                 )}
 
                 {/* ---------  Water Intake Graph  -------- */}
                 {waterIntakeData?.length > 0 && (
-                  <Flex w="50%" h="30rem" >
+                  <Flex flexDir="column" gap="1rem" w={{ base: "100%", md: "50%" }} h="30rem" p="3rem 2rem" shadow="0 4px 8px rgba(0, 0, 0, 0.2)" borderRadius="10px">
+                    <Text fontSize="1.2rem">My Water Intake Reports</Text>
                     <Line ref={canvasRef} data={jsonData2} options={options2} height="30rem" width="100%" />
                   </Flex>
                 )}
-              </HStack>
-              <HStack w="100%">
+              </Flex>
+              <Flex w="100%" gap="2rem" flexDir={{ base: "column", md: "row" }}>
                 {/* ---------  Diet Graph  -------- */}
                 {dietData?.length > 0 && (
-                  <Flex w="50%" h="30rem" >
-                    <Bar ref={canvasRef} data={jsonData3} options={options3} height="30rem" width="100%" />
+                  <Flex flexDir="column" gap="1rem" w={{ base: "100%", md: "50%" }} h="30rem" p="3rem 2rem" shadow="0 4px 8px rgba(0, 0, 0, 0.2)" borderRadius="10px">
+                    <Text fontSize="1.2rem">My Diet Reports</Text>
+                    <Bar ref={canvasRef} data={jsonData3} options={options3} height="auto" width="100%" />
                   </Flex>
                 )}
 
                 {/* ---------  Skin Care Graph  -------- */}
                 {skinCareData?.length > 0 && (
-                  <Flex w="50%" h="30rem" >
-                    <Bar ref={canvasRef} data={jsonData4} options={options4} height="30rem" width="100%" />
+                  <Flex flexDir="column" gap="1rem" w={{ base: "100%", md: "50%" }} h="30rem" p="3rem 2rem" shadow="0 4px 8px rgba(0, 0, 0, 0.2)" borderRadius="10px">
+                    <Text fontSize="1.2rem">My Skin Care Reports</Text>
+                    <Bar ref={canvasRef} data={jsonData4} options={options4} height="auto" width="100%" />
                   </Flex>
                 )}
-
-              </HStack>
-            </VStack>
+              </Flex>
+            </Flex>
           ) : (
             <HStack alignItems="flex-start" justifyContent="flex-start">
               <Text>Want to check your daily Skin Care analytics ?</Text>
               <Text color={theme.colors.brand.primary_green_dark} _hover={{ textDecoration: "underline" }}>
-                <Link to="/private/health-analytics" >Click here</Link>
+                <Link to="/private/health-analytics">Click here</Link>
               </Text>
             </HStack>
           )}
         </Flex>
-
       </Flex>
     </DashboardWrapper>
+
   );
 };
 
