@@ -20,6 +20,7 @@ const DashboardWrapper = ({
                 shadow="md"
                 borderRadius={"20px"}
                 overflowY={"auto"}
+                overflowX={"hidden"}
                 p="2rem"
                 alignItems="flex-start"
                 justifyContent="flex-start"
