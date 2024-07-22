@@ -292,7 +292,7 @@ const Dashboard = () => {
         </Flex>
 
         <Flex w="100%" >
-          {lifeStyleData?.length > 0 || waterIntakeData?.length > 0 ? (
+          {lifeStyleData?.length>0 || waterIntakeData?.length>0 || dietData?.length>0 || skinCareData>0 ? (
             <VStack w="100%" gap="1rem">
               <HStack w="100%">
                 {/* ---------  Lifestyle Graph  -------- */}
