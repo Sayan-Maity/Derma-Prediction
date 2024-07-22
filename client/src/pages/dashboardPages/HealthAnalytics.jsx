@@ -297,16 +297,16 @@ const HealthAnalytics = () => {
         <DashboardWrapper>
             <Flex flexDir="row" width="100%" alignItems="flex-start" justifyContent="flex-start" gap="2rem" flexWrap="wrap">
 
-                <Flex onClick={onOpenLifestyleModal} backgroundColor={theme.colors.brand.primary_green_light} borderRadius="1rem" overflow="hidden" cursor="pointer">
+                <Flex onClick={onOpenLifestyleModal} backgroundColor={theme.colors.brand.primary_green_light} borderRadius="1rem" overflow="hidden" cursor="pointer" opacity="1" _hover={{opacity: "0.9"}}>
                     <Image src={Lifestyle} h="full" w="full" />
                 </Flex>
-                <Flex onClick={onOpenWaterIntakeModal} backgroundColor={theme.colors.brand.primary_blue_light} borderRadius="1rem" overflow="hidden" cursor="pointer">
+                <Flex onClick={onOpenWaterIntakeModal} backgroundColor={theme.colors.brand.primary_blue_light} borderRadius="1rem" overflow="hidden" cursor="pointer" opacity="1" _hover={{opacity: "0.9"}}>
                     <Image src={WaterIntakeImage} h="full" w="full" />
                 </Flex>
-                <Flex onClick={onOpenDietModal} backgroundColor={theme.colors.brand.primary_blue_light} borderRadius="1rem" overflow="hidden" cursor="pointer">
+                <Flex onClick={onOpenDietModal} backgroundColor={theme.colors.brand.primary_blue_light} borderRadius="1rem" overflow="hidden" cursor="pointer" opacity="1" _hover={{opacity: "0.9"}}>
                     <Image src={Diet} h="full" w="full" />
                 </Flex>
-                <Flex onClick={onOpenSkinCareModal} backgroundColor={theme.colors.brand.primary_green_light} borderRadius="1rem" overflow="hidden" cursor="pointer">
+                <Flex onClick={onOpenSkinCareModal} backgroundColor={theme.colors.brand.primary_green_light} borderRadius="1rem" overflow="hidden" cursor="pointer" opacity="1" _hover={{opacity: "0.9"}}>
                     <Image src={SkinCare} h="full" w="full" />
                 </Flex>
 
