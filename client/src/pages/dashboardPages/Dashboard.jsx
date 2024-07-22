@@ -1,4 +1,13 @@
-import { Line } from 'react-chartjs-2';
+import { Line, Bar } from 'react-chartjs-2';
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend,
+} from 'chart.js';
 import { IconStar } from "../../assets/svgs/Icons";
 import { Link } from "react-router-dom";
 import DashboardWrapper from "../../components/DashboardWrapper";
@@ -31,19 +40,16 @@ const Dashboard = () => {
   const [skinCareData, setSkinCareData] = useState([])
 
   useEffect(() => {
-    // Set up an interval to update the displayed string every 12 hours
     const intervalId = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % SkinTipItems.length);
     }, 24 * 60 * 60 * 1000);
 
     return () => {
-      // Clean up the interval when the component is unmounted
       clearInterval(intervalId);
     };
   }, []);
 
   useEffect(() => {
-    // Update the currentString whenever currentIndex changes
     setCurrentString(SkinTipItems[currentIndex]);
   }, [currentIndex]);
 
@@ -69,7 +75,7 @@ const Dashboard = () => {
 
   console.log("Skincare data =>", skinCareData);
 
-
+  // LifeStyle Data:
   const jsonData = {
     labels: lifeStyleData?.map((data) => data.date),
     datasets: [
@@ -105,7 +111,6 @@ const Dashboard = () => {
       },
     ],
   };
-
   const options = {
     maintainAspectRatio: false,
     scales: {
@@ -126,7 +131,7 @@ const Dashboard = () => {
     },
   };
 
-
+  // Water Intake Data:
   const jsonData2 = {
     labels: waterIntakeData?.map((data) => data.date),
     datasets: [
@@ -142,7 +147,6 @@ const Dashboard = () => {
       },
     ],
   };
-
   const options2 = {
     maintainAspectRatio: false,
     scales: {
@@ -163,6 +167,7 @@ const Dashboard = () => {
     },
   };
 
+  // Diet Data:
   const jsonData3 = {
     labels: dietData?.map((data) => data.date),
     datasets: [
@@ -198,7 +203,6 @@ const Dashboard = () => {
       },
     ],
   };
-
   const options3 = {
     maintainAspectRatio: false,
     scales: {
@@ -218,6 +222,8 @@ const Dashboard = () => {
       },
     },
   };
+
+  // Skin Care Data:
   const jsonData4 = {
     labels: skinCareData?.map((data) => data.date),
     datasets: [
@@ -253,7 +259,6 @@ const Dashboard = () => {
       },
     ],
   };
-
   const options4 = {
     maintainAspectRatio: false,
     scales: {
@@ -332,12 +337,10 @@ const Dashboard = () => {
               <Text color={theme.colors.brand.primary_green_dark} _hover={{ textDecoration: "underline" }}>
                 <Link to="/private/health-analytics" >Click here</Link>
               </Text>
-
             </HStack>
           )}
-
         </Flex>
-
+        
       </Flex>
     </DashboardWrapper>
   );
