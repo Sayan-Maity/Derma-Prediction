@@ -282,7 +282,7 @@ const Dashboard = () => {
 
   return (
     <DashboardWrapper>
-      <Flex gap="2rem" width="100%" alignItems="flex-start" flexDir="column">
+      <Flex gap="2rem" width="100%" alignItems="flex-start" flexDir="column" >
         <Heading fontSize="2rem"> Your Dashboard </Heading>
         <Flex flexDir="column" border="1px solid #74809a" p="1rem 2rem" borderRadius="5px">
           <HStack>
