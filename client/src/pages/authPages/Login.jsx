@@ -212,7 +212,7 @@ const Login = () => {
             </Flex>
           </Flex>
         </Flex>
-        <Flex width="50%" height="100vh" backgroundImage={`${Abstract}`} backgroundPosition="center" backgroundSize="cover">
+        <Flex display={{base: "none", lg: "flex"}} width="50%" height="100vh" backgroundImage={`${Abstract}`} backgroundPosition="center" backgroundSize="cover">
         </Flex>
       </Flex>
     </Flex>

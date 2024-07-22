@@ -106,8 +106,8 @@ const Page3 = () => {
 
   return (
     <DashboardWrapper >
-      <Flex width="100%" alignItems="flex-start">
-        <Flex width="40%" flexDir="column" alignItems="center" pr="1rem" gap="1rem" maxH="100vh" h="90vh" overflowY="auto">
+      <Flex width="100%" gap="1rem" alignItems="flex-start" flexDir={{base: "column", md: "row"}}>
+        <Flex width={{base: "100%", md: "40%"}} h={{base: "67vh", md: "90vh"}}  maxH="100vh" flexDir="column" alignItems="center" pr="1rem" gap="1rem" overflowY="auto">
           <Flex gap="1rem" w="100%">
             <Input type="text" placeholder="Search here ..." value={searchText} onChange={handleFilterSkinDisease} _focus={{ border: `1px solid ${theme.colors.brand.primary_green_dark}` }} />
             <Button onClick={() => handleOpenAIApiCall(searchText)} isLoading={loading}><BsSearch /></Button>
@@ -115,13 +115,13 @@ const Page3 = () => {
 
           <Flex flexDir="column" gap="1rem" w="100%">
             {filteredItems.map((item, index) => (
-              <Button isDisabled={loading} variant="unstyled" textAlign="left" fontWeight="500" color="#333" key={index} onClick={() => { setDiseaseName(item); handleOpenAIApiCall(item) }} p="0.5rem 2rem" backgroundColor="#81efcc" cursor="pointer" borderRadius="5px">
+              <Button isDisabled={loading} variant="unstyled" textAlign="left" fontWeight="500" color="#333" key={index} onClick={() => { setDiseaseName(item); handleOpenAIApiCall(item) }} p="0.5rem 2rem" backgroundColor="#81efcc" cursor="pointer" borderRadius="5px" wordBreak="break-all" flexWrap="wrap" display="flex">
                 <Text>{item}</Text>
               </Button>
             ))}
           </Flex>
         </Flex>
-        <Flex color="#333" width="60%" maxH="100vh" h="90vh" overflowY="auto" alignItems="flex-start" justifyContent="flex-start" p="0 1rem">
+        <Flex color="#333" width={{base: "100%", md: "60%"}} h={{base: "full", md: "90vh"}} overflowY="auto" alignItems="flex-start" justifyContent="flex-start" p={{base: "0", md:"0 1rem"}}>
           {!diseaseInformation?.description !== "" && (
             <Flex width="100%" h="90vh" overflowY="auto">
               <Flex gap="1rem" flexDir="column" width="100%">

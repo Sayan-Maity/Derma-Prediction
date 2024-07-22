@@ -123,9 +123,8 @@ const DermaDetection = () => {
 
   return (
     <DashboardWrapper>
-      <Flex gap="2rem" width="100%" alignItems="flex-start">
-        <Flex flexDir="column" width="40%" gap="1rem">
-          {/* <input type="file" accept="image/*" onChange={handleImageChange} /> */}
+      <Flex gap="2rem" width="100%" alignItems="flex-start" flexDir={{base: "column", md: "row"}}>
+        <Flex flexDir="column" width={{base: "100%", md: "40%"}} gap="1rem">
           <label
             htmlFor="imageFile"
             className="custom-imageFile-input-magicWand"
@@ -186,9 +185,6 @@ const DermaDetection = () => {
             _focus={{ border: `1px solid ${theme.colors.brand.primary_green_dark}` }}
             onChange={(e) => setSymptomPrompt(e.target.value)}
           />
-          {/* <Button onClick={handleUpload} isLoading={loading} loadingText="Detecting...">
-            Submit
-          </Button> */}
 
           <Button
             onClick={handleUpload}
@@ -203,7 +199,7 @@ const DermaDetection = () => {
             }} variant="unstyled" p="1.5rem" display="flex" color="#fff" borderRadius="10px">Submit</Button>
         </Flex>
 
-        <Flex width="60%" h="90vh" overflowY="auto">
+        <Flex width={{base: "100%", md: "60%"}} h={{base: "full", md: "90vh"}} overflowY="auto">
           <Flex gap="1rem" flexDir="column" width="100%">
             <Flex
               flexDir="column"
