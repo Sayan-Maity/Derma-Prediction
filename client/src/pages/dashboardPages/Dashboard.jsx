@@ -1,13 +1,4 @@
-import { Line, Bar } from 'react-chartjs-2';
-import {
-  Chart as ChartJS,
-  CategoryScale,
-  LinearScale,
-  BarElement,
-  Title,
-  Tooltip,
-  Legend,
-} from 'chart.js';
+import { Line, Bar, Chart } from 'react-chartjs-2';
 import { IconStar } from "../../assets/svgs/Icons";
 import { Link } from "react-router-dom";
 import DashboardWrapper from "../../components/DashboardWrapper";
@@ -17,17 +8,28 @@ import { useEffect, useRef, useState } from "react";
 import { SkinTipItems } from "../../constants/SkinTipItems";
 import {
   Chart as ChartJS,
+  BarElement,
   CategoryScale,
   LinearScale,
   PointElement,
   LineElement,
   Title,
+  Filler,
   Tooltip,
   Legend,
 
 } from 'chart.js';
-ChartJS.register(LinearScale, PointElement, CategoryScale, Tooltip, Legend, LineElement,
-  Title);
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  PointElement,
+  LineElement,
+  Tooltip,
+  Legend,
+  Filler,
+  Title
+);
 
 const Dashboard = () => {
   const theme = useTheme();
@@ -139,9 +141,9 @@ const Dashboard = () => {
         label: "Water",
         data: waterIntakeData?.map((data) => data.water),
         borderWidth: 2,
-        backgroundColor: "#0078aa",
-        borderColor: '#0078aa',
-        fill: false,
+        backgroundColor: "#0077aa72",
+        borderColor: '#0077aa72',
+        fill: true,
         tension: 0.8, //curve
         cubicInterpolationMode: 'monotone',
       },
@@ -162,7 +164,7 @@ const Dashboard = () => {
           text: 'Water (Litres)',
         },
         min: 0,
-        max: 5
+        max: 6
       },
     },
   };
@@ -175,31 +177,34 @@ const Dashboard = () => {
         label: "Fruit",
         data: dietData?.map((data) => data.fruit),
         borderWidth: 2,
-        backgroundColor: "#3ce2ad",
+        backgroundColor: "#3ce2ad72",
         borderColor: '#3ce2ad',
         fill: false,
-        tension: 0.8, //curve
+        tension: 0.8,
         cubicInterpolationMode: 'monotone',
+        stack: '',
       },
       {
         label: "Vegetable",
         data: dietData?.map((data) => data.vegetable),
         borderWidth: 2,
-        backgroundColor: "#0078aa",
+        backgroundColor: "#0078aa72",
         borderColor: '#0078aa',
         fill: false,
-        tension: 0.8, //curve
+        tension: 0.8,
         cubicInterpolationMode: 'monotone',
+        stack: '',
       },
       {
         label: "Meat",
         data: dietData?.map((data) => data.meat),
         borderWidth: 2,
-        backgroundColor: "red",
-        borderColor: 'red',
+        backgroundColor: "#d3d3d372",
+        borderColor: '#d3d3d3',
         fill: false,
-        tension: 0.8, //curve
+        tension: 0.8,
         cubicInterpolationMode: 'monotone',
+        stack: '',
       },
     ],
   };
@@ -207,18 +212,20 @@ const Dashboard = () => {
     maintainAspectRatio: false,
     scales: {
       x: {
+        stacked: true,
         title: {
           display: true,
           text: 'Date',
         },
       },
       y: {
+        stacked: true,
         title: {
           display: true,
           text: 'Food Comsumption (boolean)',
         },
         min: 0,
-        max: 1
+        max: 4
       },
     },
   };
@@ -231,7 +238,7 @@ const Dashboard = () => {
         label: "Cleanser",
         data: skinCareData?.map((data) => data.cleanser),
         borderWidth: 2,
-        backgroundColor: "#3ce2ad",
+        backgroundColor: "#3ce2ad72",
         borderColor: '#3ce2ad',
         fill: false,
         tension: 0.8, //curve
@@ -241,7 +248,7 @@ const Dashboard = () => {
         label: "Toner",
         data: skinCareData?.map((data) => data.toner),
         borderWidth: 2,
-        backgroundColor: "#0078aa",
+        backgroundColor: "#0078aa72",
         borderColor: '#0078aa',
         fill: false,
         tension: 0.8, //curve
@@ -251,8 +258,8 @@ const Dashboard = () => {
         label: "Moisturizer",
         data: skinCareData?.map((data) => data.moisturizer),
         borderWidth: 2,
-        backgroundColor: "red",
-        borderColor: 'red',
+        backgroundColor: "#d3d3d372",
+        borderColor: '#d3d3d3',
         fill: false,
         tension: 0.8, //curve
         cubicInterpolationMode: 'monotone',
@@ -263,18 +270,20 @@ const Dashboard = () => {
     maintainAspectRatio: false,
     scales: {
       x: {
+        stacked: true,
         title: {
           display: true,
           text: 'Date',
         },
       },
       y: {
+        stacked: true,
         title: {
           display: true,
           text: 'Skin Care Done (boolean)',
         },
         min: 0,
-        max: 1
+        max: 4
       },
     },
   };
@@ -297,7 +306,7 @@ const Dashboard = () => {
         </Flex>
 
         <Flex w="100%" >
-          {lifeStyleData?.length>0 || waterIntakeData?.length>0 || dietData?.length>0 || skinCareData>0 ? (
+          {lifeStyleData?.length > 0 || waterIntakeData?.length > 0 || dietData?.length > 0 || skinCareData > 0 ? (
             <VStack w="100%" gap="1rem">
               <HStack w="100%">
                 {/* ---------  Lifestyle Graph  -------- */}
@@ -318,14 +327,14 @@ const Dashboard = () => {
                 {/* ---------  Diet Graph  -------- */}
                 {dietData?.length > 0 && (
                   <Flex w="50%" h="30rem" >
-                    <Line ref={canvasRef} data={jsonData3} options={options3} height="30rem" width="100%" />
+                    <Bar ref={canvasRef} data={jsonData3} options={options3} height="30rem" width="100%" />
                   </Flex>
                 )}
 
                 {/* ---------  Skin Care Graph  -------- */}
                 {skinCareData?.length > 0 && (
                   <Flex w="50%" h="30rem" >
-                    <Line ref={canvasRef} data={jsonData4} options={options4} height="30rem" width="100%" />
+                    <Bar ref={canvasRef} data={jsonData4} options={options4} height="30rem" width="100%" />
                   </Flex>
                 )}
 
@@ -340,7 +349,7 @@ const Dashboard = () => {
             </HStack>
           )}
         </Flex>
-        
+
       </Flex>
     </DashboardWrapper>
   );
