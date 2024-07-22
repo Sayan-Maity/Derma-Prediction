@@ -11,14 +11,16 @@ const Private = () => {
   const theme = useTheme();
   return (
     <Flex
-      h="100vh"
+      minH="100vh"
       flexDir="row"
       justifyContent="center"
       alignItems="flex-start"
       borderRight={`1px solid ${theme.colors.border}`}
+      overflowX="hidden"
+      w="100%"
     >
       <Sidebar />
-      <Flex w="100%">
+      <Flex w="100%" overflow="hidden">
         <Outlet />
       </Flex>
     </Flex>

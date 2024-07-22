@@ -11,12 +11,13 @@ const DashboardWrapper = ({
             h="100vh"
             maxH="100vh"
             width="100%"
-            // bgGradient="linear(to-b, teal.300, #0078aa26)"
+            minW="0"
             bgGradient="linear(to-b, #3ce2ad6e, #0078aa78)"
             overflowX={"hidden"}
         >
             <VStack
                 width="100%"
+                minW="0"
                 border={`1px solid ${theme.colors.border}`}
                 shadow="md"
                 borderRadius={"20px"}
