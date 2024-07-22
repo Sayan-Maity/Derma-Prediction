@@ -6,7 +6,6 @@ import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import { useForm, ValidationError } from '@formspree/react';
 import { useNavigate } from "react-router-dom";
-import { PiStethoscopeFill } from "react-icons/pi";
 import FeaturedCard from "../../components/FeaturedCard";
 import { FeaturedCardContent } from "../../constants/FeaturedCardContent";
 import SectionTitle from "../../components/SectionTitle";
@@ -39,9 +38,11 @@ const LandingPage = () => {
 
       {/* -------------------------------  Landing Section  -------------------------------- */}
       <Flex width={{ base: "full", xl: "1280px" }} marginTop="6rem" p="3rem" justifyContent="space-between" flexDir="row" alignItems="center" h="100vh">
-        <Flex width={{base:"100%", xl:"50%"}} flexDir="column">
-          <Text fontSize="4rem" lineHeight="10">AI Powered</Text>
-          <Text fontSize="4rem" display="flex" gap="0.5rem" alignItems={{ base:"flex-end", xl:"center" }}>Skin Diagnosis <PiStethoscopeFill color="#81efcc" /></Text>
+        <Flex width={{ base: "100%", xl: "50%" }} flexDir="column" >
+          <Flex flexDir="column" lineHeight="4.5rem" width="fit-content" mb="1.5rem">
+            <Text fontSize="4rem" >AI Powered</Text>
+            <Text fontSize="4rem" gap="0.5rem" alignItems={{ base: "flex-end", xl: "center" }} width="fit-content">Skin Diagnosis</Text>
+          </Flex>
           <Text fontSize="1.4rem"> Explore the future of dermatological care with our AI-based tool <span style={{ color: "#3ce2ad", fontWeight: "500" }}>Dermify.AI</span> which harnesses the power of image processing to offer cost-effective and accessible skin condition assessments worldwide.</Text>
           <Button
             onClick={() => navigate("/private/derma-detection")}
@@ -69,7 +70,7 @@ const LandingPage = () => {
             Explore Now
           </Button>
         </Flex>
-        <Flex width="50%" alignItems="flex-end" justifyContent="flex-end" display={{base:"none", xl:"block"}}>
+        <Flex width="50%" flexDir="row" alignItems="flex-end" justifyContent="flex-end" display={{ base: "none", xl: "flex" }}>
           <Image src="https://ik.imagekit.io/sayancr777/tr:w-400/Dermify/LandingVector.png?updatedAt=1714966041467" height="35rem" alt="doctor-vector" />
         </Flex>
       </Flex>
@@ -80,17 +81,16 @@ const LandingPage = () => {
 
         <HStack width={{ base: "full", xl: "1280px" }} p="3rem" flexWrap="wrap" gap="2rem 0" justifyContent="center" alignItems="center">
 
-          <HStack w="full" justifyContent="center" gap="3rem 1rem" >
+          <HStack w="full" justifyContent="center" gap="3rem 1rem" flexWrap="wrap" >
             <FeaturedCard featuredItem={FeaturedCardContent[0]} />
             <FeaturedCard featuredItem={FeaturedCardContent[1]} />
-            {/* <FeaturedCard featuredItem={FeaturedCardContent[2]} /> */}
             <FeaturedCard featuredItem={FeaturedCardContent[3]} />
           </HStack>
-          <HStack w="full" justifyContent="center" gap="3rem 1rem" >
+          <HStack w="full" justifyContent="center" gap="3rem 1rem" flexWrap="wrap" >
             <FeaturedCard featuredItem={FeaturedCardContent[4]} />
             <FeaturedCard featuredItem={FeaturedCardContent[5]} />
           </HStack>
-          <HStack w="full" justifyContent="center" gap="3rem 1rem" >
+          <HStack w="full" justifyContent="center" gap="3rem 1rem" flexWrap="wrap" >
             <FeaturedCard featuredItem={FeaturedCardContent[6]} />
             <FeaturedCard featuredItem={FeaturedCardContent[7]} />
             <FeaturedCard featuredItem={FeaturedCardContent[8]} />
@@ -102,11 +102,11 @@ const LandingPage = () => {
       {/* -------------------------------  Why Choose Us Section  -------------------------------- */}
       <SectionTitle title={LandingSectionTitle[2].title} description={LandingSectionTitle[2].description} />
 
-      <Flex width={{ base: "full", xl: "1280px" }} p="3rem" justifyContent="space-between" flexDir={{base:"column", xl:"row"}} alignItems={{base:"center", xl:"flex-start"}} >
-        <Flex width="50%" alignItems="center" justifyContent="center" display={{base:"none", xl:"block"}}>
+      <Flex width={{ base: "full", xl: "1280px" }} p="3rem" justifyContent="space-between" flexDir={{ base: "column", xl: "row" }} alignItems={{ base: "center", xl: "flex-start" }} >
+        <Flex width="50%" alignItems="center" justifyContent="center" display={{ base: "none", xl: "block" }}>
           <Image src="https://ik.imagekit.io/sayancr777/tr:w-400/Dermify/WhyChooseUS.png?updatedAt=1714965959564" height="30rem" alt="choose-us" />
         </Flex>
-        <VStack width={{base:"100%", xl:"50%"}} alignItems="flex-start" >
+        <VStack width={{ base: "100%", xl: "50%" }} alignItems="flex-start" >
           <VStack gap="0" alignItems="flex-start">
             <Text color={theme.colors.brand.primary_green_dark} fontSize="1.2rem">Passwordless Authentication</Text>
             <Text>Passwordless authentication is an authentication method in which a user can log in to any particular product or system without entering (and having to remember) a password or any other knowledge-based secret.</Text>
@@ -125,9 +125,9 @@ const LandingPage = () => {
       {/* -------------------------------  Contact Us Section  -------------------------------- */}
       <SectionTitle title={LandingSectionTitle[4].title} description={LandingSectionTitle[4].description} />
 
-      <Flex width={{ base: "full", xl: "1280px" }} p="3rem" justifyContent="space-between" flexDir={{base:"column-reverse", xl:"row"}} alignItems="center" >
-        <Flex width={{base:"100%", xl:"50%"}} >
-          <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", width: "90%", gap: "1rem" }}>
+      <Flex width={{ base: "full", xl: "1280px" }} p="3rem" justifyContent="space-between" flexDir={{ base: "column-reverse", xl: "row" }} alignItems="center" gap={{ base: "0", xl: "1rem" }}>
+        <Flex width={{ base: "100%", xl: "50%" }} >
+          <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", width: "100%", gap: "1rem" }}>
             <Input
               id="email"
               type="email"
@@ -167,7 +167,7 @@ const LandingPage = () => {
               borderRadius="10px">Submit</Button>
           </form>
         </Flex>
-        <Flex width="50%" alignItems="center" justifyContent="center" display={{base:"none", xl:"block"}}>
+        <Flex width="50%" alignItems="center" justifyContent="center" display={{ base: "none", xl: "flex" }}>
           <Image src="https://ik.imagekit.io/sayancr777/tr:w-400/Dermify/ContactUs.png?updatedAt=1714965927940" height="30rem" alt="contact-us" />
         </Flex>
       </Flex>

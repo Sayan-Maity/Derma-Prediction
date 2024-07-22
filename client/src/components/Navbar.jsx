@@ -11,11 +11,11 @@ const Navbar = () => {
 
 
   return (
-    <Flex width="100%" alignItems="center" justifyContent="center" mt="1rem" pos="fixed" zIndex="100">
-      <Flex width={{ base: "full", xl: "1280px" }} borderRadius="5px" justifyContent="space-between" p="1rem 3rem" boxShadow="0 2px 3px #bebebe" backdropFilter="blur(8px)" >
+    <Flex width="100%" alignItems="center" justifyContent="center" margin="1rem" pos="fixed" zIndex="100">
+      <Flex width={{ base: "full", xl: "1280px" }} borderRadius="5px" justifyContent="space-between" p={{base: "1rem", sm: "1rem 3rem"}} boxShadow="0 2px 3px #bebebe" backdropFilter="blur(8px)" >
         <Flex alignItems="center" gap="1rem">
           <Image src={Logo} alt="Dermify.AI logo" h="3.5rem" />
-          <Text fontSize="1.5rem" fontWeight="500">Dermify.AI</Text>
+          <Text fontSize="1.5rem" fontWeight="500" display={{base: "none", md: "flex"}}>Dermify.AI</Text>
         </Flex>
         <Flex >
           {Cookies.get("token") ? (

@@ -28,7 +28,7 @@ const PrivateUserRoute = ({ element: Component, ...rest }) => {
   const isDoctor = Cookies.get('doctor') === "false";
   const isTokenPresent = Cookies.get('token') !== undefined;
 
-  return isDoctor && isTokenPresent ? <Component /> : <Navigate to="/login" />;
+  return isDoctor && isTokenPresent ? <Component /> : <Component />;
   // return <Component /> 
 };
 
