@@ -2,14 +2,14 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-undef */
 import axios from 'axios'
-import DashboardWrapper from '../../components/DashboardWrapper'
+import DashboardWrapper from '../../../components/DashboardWrapper'
 import { Button, Flex, Heading, Text, VStack } from '@chakra-ui/react'
 import Cookies from 'js-cookie'
 import Peer from 'simple-peer';
 import { io } from 'socket.io-client';
 import { useState, useEffect, useRef } from 'react';
-import IncomingCallAudio from "../../assets/sounds/incomingCall.mp3"
-import VideoCall from '../../components/VideoCall';
+import IncomingCallAudio from "../../../assets/sounds/incomingCall.mp3"
+import VideoCall from '../../../components/VideoCall';
 
 const SERVER_URL = process.env.REACT_APP_SERVER_URL || 'http://localhost:5000';
 const socket = io(SERVER_URL);

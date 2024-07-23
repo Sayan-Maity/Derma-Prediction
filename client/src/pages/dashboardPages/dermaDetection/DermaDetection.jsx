@@ -13,8 +13,8 @@ import {
   useToast,
 } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
-import DashboardWrapper from "../../components/DashboardWrapper";
-import DashboardTabTitle from "../../components/dashboardTabTitle/DashboardTabTitle";
+import DashboardWrapper from "../../../components/DashboardWrapper";
+import DashboardTabTitle from "../../../components/dashboardTabTitle/DashboardTabTitle";
 
 const DermaDetection = () => {
   const theme = useTheme();

@@ -1,11 +1,11 @@
-import { Line, Bar, Chart } from 'react-chartjs-2';
-import { IconStar } from "../../assets/svgs/Icons";
+import { Line, Bar } from 'react-chartjs-2';
+import { IconStar } from "../../../assets/svgs/Icons";
 import { Link } from "react-router-dom";
-import DashboardWrapper from "../../components/DashboardWrapper";
-import { useQueryGetDietData, useQueryGetLifeStyleData, useQueryGetSkinCareData, useQueryGetWaterIntakeData } from "../../hooks/queryHooks/user-dashboard";
-import { Button, Flex, HStack, Heading, Text, VStack, useTheme } from "@chakra-ui/react";
+import DashboardWrapper from "../../../components/DashboardWrapper";
+import { useQueryGetDietData, useQueryGetLifeStyleData, useQueryGetSkinCareData, useQueryGetWaterIntakeData } from "../../../hooks/queryHooks/user-dashboard";
+import { Flex, HStack, Text, useTheme } from "@chakra-ui/react";
 import { useEffect, useRef, useState } from "react";
-import { SkinTipItems } from "../../constants/SkinTipItems";
+import { SkinTipItems } from "../../../constants/SkinTipItems";
 import {
   Chart as ChartJS,
   BarElement,
@@ -19,7 +19,7 @@ import {
   Legend,
 
 } from 'chart.js';
-import DashboardTabTitle from '../../components/dashboardTabTitle/DashboardTabTitle';
+import DashboardTabTitle from '../../../components/dashboardTabTitle/DashboardTabTitle';
 ChartJS.register(
   CategoryScale,
   LinearScale,

@@ -1,11 +1,11 @@
 
 import { Button, Flex, Input, ListItem, Text, UnorderedList, useTheme, useToast } from "@chakra-ui/react";
-import { SkinDiseaseItems } from "../../constants/SkinDiseaseItems"
+import { SkinDiseaseItems } from "../../../constants/SkinDiseaseItems"
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { BsSearch } from "react-icons/bs";
-import DashboardWrapper from "../../components/DashboardWrapper";
-import DashboardTabTitle from "../../components/dashboardTabTitle/DashboardTabTitle";
+import DashboardWrapper from "../../../components/DashboardWrapper";
+import DashboardTabTitle from "../../../components/dashboardTabTitle/DashboardTabTitle";
 
 const Page3 = () => {
   const toast = useToast();

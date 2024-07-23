@@ -2,11 +2,11 @@
 import { Flex, Button, useToast, Input, Modal, ModalContent, ModalOverlay, ModalBody, ModalCloseButton, useDisclosure, Text, Image, useTheme, Heading, VStack } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
 import { Editor, EditorState, convertToRaw, convertFromRaw } from 'draft-js';
-import RenderedContent from '../../components/RenderedContent';
-import DashboardWrapper from '../../components/DashboardWrapper';
-import { postCommunityForum } from '../../services/community-forum/postCommunityForum';
-import { getBlogPosts } from '../../services/community-forum/getBlogPosts';
-import DashboardTabTitle from '../../components/dashboardTabTitle/DashboardTabTitle';
+import RenderedContent from '../../../components/RenderedContent';
+import DashboardWrapper from '../../../components/DashboardWrapper';
+import { postCommunityForum } from '../../../services/community-forum/postCommunityForum';
+import { getBlogPosts } from '../../../services/community-forum/getBlogPosts';
+import DashboardTabTitle from '../../../components/dashboardTabTitle/DashboardTabTitle';
 const CommunityForum = () => {
     const toast = useToast();
     const theme = useTheme()

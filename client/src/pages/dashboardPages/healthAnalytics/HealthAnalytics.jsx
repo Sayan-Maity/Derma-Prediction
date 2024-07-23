@@ -1,5 +1,5 @@
 
-import { Button, Checkbox, Flex, Grid, GridItem, Heading, Image, Input, Text, useDisclosure, useTheme, useToast } from '@chakra-ui/react'
+import { Button, Checkbox, Flex, Grid, GridItem, Heading, Image, Input, useDisclosure, useTheme, useToast } from '@chakra-ui/react'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
 import Cookies from 'js-cookie'
@@ -10,14 +10,13 @@ import {
     ModalBody,
     ModalCloseButton,
 } from '@chakra-ui/react'
-import { IconStar } from '../../assets/svgs/Icons'
-import DashboardWrapper from '../../components/DashboardWrapper'
-import WaterIntakeImage from '../../assets/svgs/WaterIntake.png'
-import Diet from '../../assets/svgs/Diet.png'
-import Lifestyle from '../../assets/svgs/Lifestyle.png'
-import SkinCare from '../../assets/svgs/SkinCare.png'
-import DashboardTabTitle from '../../components/dashboardTabTitle/DashboardTabTitle'
-import CustomAccordion from '../../components/customAccordion/CustomAccordion'
+import DashboardWrapper from '../../../components/DashboardWrapper'
+import WaterIntakeImage from '../../../assets/svgs/WaterIntake.png'
+import Diet from '../../../assets/svgs/Diet.png'
+import Lifestyle from '../../../assets/svgs/Lifestyle.png'
+import SkinCare from '../../../assets/svgs/SkinCare.png'
+import DashboardTabTitle from '../../../components/dashboardTabTitle/DashboardTabTitle'
+import CustomAccordion from '../../../components/customAccordion/CustomAccordion'
 
 const HealthAnalytics = () => {
     const theme = useTheme()
