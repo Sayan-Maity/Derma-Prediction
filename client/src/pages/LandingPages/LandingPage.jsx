@@ -1,6 +1,5 @@
-
-/* eslint-disable react/no-unescaped-entities */
-/* eslint-disable no-unused-vars */
+import { createRef, useEffect, useRef } from 'react';
+import { gsap } from 'gsap';
 import { Button, Flex, HStack, Image, Input, Text, Textarea, VStack, useTheme, useToast } from "@chakra-ui/react";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
@@ -10,15 +9,26 @@ import FeaturedCard from "../../components/FeaturedCard";
 import { FeaturedCardContent } from "../../constants/FeaturedCardContent";
 import SectionTitle from "../../components/SectionTitle";
 import { LandingSectionTitle } from "../../constants/LandingSectionTitle";
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
+gsap.registerPlugin(ScrollTrigger);
 const LandingPage = () => {
   const toast = useToast();
   const navigate = useNavigate();
   const theme = useTheme();
   const [state, handleSubmit] = useForm("xvojwqeo");
-  if (state.succeeded) {
-    return <p>Thank you for contacting us, we will get back you soon!</p>;
-  }
+  const textRef1 = useRef(null);
+  const textRef2 = useRef(null);
+  const textRef3 = useRef(null);
+  const textRef4 = useRef(null);
+  const imageRef = useRef(null);
+
+  const featuredCardGroups = [
+    [0, 1, 2],
+    [3, 4],
+    [5, 6, 7]
+  ];
+  const featureRefs = useRef([...Array(8)].map(() => createRef()));
 
   const handleComingSoon = () => {
     toast({
@@ -30,7 +40,38 @@ const LandingPage = () => {
       status: "info",
     });
   }
+  useEffect(() => {
+    gsap.fromTo(textRef1.current, { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 0.8 });
+    gsap.fromTo(textRef2.current, { opacity: 0, y: 80 }, { opacity: 1, y: 0, duration: 1.1 });
+    gsap.fromTo(textRef3.current, { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 0.8, delay: 1 });
+    gsap.fromTo(textRef4.current, { opacity: 0, y: 80 }, { opacity: 1, y: 0, duration: 1.1, delay: 1 });
+    gsap.fromTo(imageRef.current, { opacity: 0, x: '100px' }, { opacity: 1, x: 0, duration: 1 });
 
+    const animations = [
+      { opacity: 0, x: -100, rotation: -20 },
+      { opacity: 0, y: 100, rotation: 0 },
+      { opacity: 0, x: 100, rotation: 20 },
+      { opacity: 0, x: -100, rotation: 0 },
+      { opacity: 0, x: 100, rotation: 0 },
+      { opacity: 0, x: -100, rotation: -20 },
+      { opacity: 0, y: 100, rotation: 0 },
+      { opacity: 0, x: 100, rotation: 20 },
+    ];
+
+    featureRefs.current.forEach((ref, index) => {
+      gsap.fromTo(ref.current, animations[index], {
+        opacity: 1,
+        x: 0,
+        y: 0,
+        rotation: 0,
+        duration: 1,
+        scrollTrigger: {
+          trigger: ref.current,
+          start: 'top 80%',
+        },
+      });
+    });
+  }, []);
 
   return (
     <Flex flexDir="column" width="100%" alignItems="center">
@@ -40,38 +81,43 @@ const LandingPage = () => {
       <Flex width={{ base: "full", xl: "1280px" }} marginTop="6rem" p="3rem" justifyContent="space-between" flexDir="row" alignItems="center" h="100vh">
         <Flex width={{ base: "100%", xl: "50%" }} flexDir="column" >
           <Flex flexDir="column" lineHeight="4.5rem" width="fit-content" mb="1.5rem">
-            <Text fontSize="4rem" >AI Powered</Text>
-            <Text fontSize="4rem" gap="0.5rem" alignItems={{ base: "flex-end", xl: "center" }} width="fit-content">Skin Diagnosis</Text>
+            <Text ref={textRef1} fontSize="4rem">AI Powered</Text>
+            <Text ref={textRef2} fontSize="4rem" gap="0.5rem" alignItems={{ base: "flex-end", xl: "center" }} width="fit-content">Skin Diagnosis</Text>
           </Flex>
-          <Text fontSize="1.4rem"> Explore the future of dermatological care with our AI-based tool <span style={{ color: "#3ce2ad", fontWeight: "500" }}>Dermify.AI</span> which harnesses the power of image processing to offer cost-effective and accessible skin condition assessments worldwide.</Text>
-          <Button
-            onClick={() => navigate("/private/derma-detection")}
-            loadingText="Please Wait..."
-            variant="unstyled"
-            mt="2rem"
-            gap="0.5rem"
-            p="1.5rem"
-            width="fit-content"
-            display="flex"
-            borderRadius="10px"
-            transition={"all 0.3s ease"}
-            color={theme.colors.button.light_color}
-            backgroundColor={theme.colors.button.light_backgroundColor}
-            border="2px solid transparent"
-            _hover={{
-              backgroundColor: `${theme.colors.button.hover_light_backgroundColor}`,
-              color: `${theme.colors.button.hover_light_color}`,
-              border: `${theme.colors.button.hover_light_border}`
-            }}
-            _active={{
-              backgroundColor: `${theme.colors.button.active_light_backgroundColor}`,
-            }}
-          >
-            Explore Now
-          </Button>
+          <Text ref={textRef3} fontSize="1.4rem"> Explore the future of dermatological care with our AI-based tool <span style={{ color: "#3ce2ad", fontWeight: "500" }}>Dermify.AI</span> which harnesses the power of image processing to offer cost-effective and accessible skin condition assessments worldwide.</Text>
+          <Flex ref={textRef4} mt="1.5rem">
+            <Button
+              onClick={() => navigate("/private/derma-detection")}
+              loadingText="Please Wait..."
+              variant="unstyled"
+              gap="0.5rem"
+              p="1.5rem"
+              width="fit-content"
+              display="flex"
+              borderRadius="10px"
+              transition={"all 0.3s ease"}
+              color={theme.colors.button.light_color}
+              backgroundColor={theme.colors.button.light_backgroundColor}
+              border="2px solid transparent"
+              _hover={{
+                backgroundColor: `${theme.colors.button.hover_light_backgroundColor}`,
+                color: `${theme.colors.button.hover_light_color}`,
+                border: `${theme.colors.button.hover_light_border}`
+              }}
+              _active={{
+                backgroundColor: `${theme.colors.button.active_light_backgroundColor}`,
+              }}
+            >
+              Explore Now
+            </Button>
+          </Flex>
         </Flex>
         <Flex width="50%" flexDir="row" alignItems="flex-end" justifyContent="flex-end" display={{ base: "none", xl: "flex" }}>
-          <Image src="https://ik.imagekit.io/sayancr777/tr:w-400/Dermify/LandingVector.png?updatedAt=1714966041467" height="35rem" alt="doctor-vector" />
+          <Image
+            ref={imageRef}
+            src="https://ik.imagekit.io/sayancr777/tr:w-400/Dermify/LandingVector.png?updatedAt=1714966041467"
+            height="35rem"
+            alt="doctor-vector" />
         </Flex>
       </Flex>
 
@@ -80,22 +126,13 @@ const LandingPage = () => {
         <SectionTitle title={LandingSectionTitle[1].title} description={LandingSectionTitle[1].description} />
 
         <HStack width={{ base: "full", xl: "1280px" }} p="3rem" flexWrap="wrap" gap="2rem 0" justifyContent="center" alignItems="center">
-
-          <HStack w="full" justifyContent="center" gap="3rem 1rem" flexWrap="wrap" >
-            <FeaturedCard featuredItem={FeaturedCardContent[0]} />
-            <FeaturedCard featuredItem={FeaturedCardContent[1]} />
-            <FeaturedCard featuredItem={FeaturedCardContent[3]} />
-          </HStack>
-          <HStack w="full" justifyContent="center" gap="3rem 1rem" flexWrap="wrap" >
-            <FeaturedCard featuredItem={FeaturedCardContent[4]} />
-            <FeaturedCard featuredItem={FeaturedCardContent[5]} />
-          </HStack>
-          <HStack w="full" justifyContent="center" gap="3rem 1rem" flexWrap="wrap" >
-            <FeaturedCard featuredItem={FeaturedCardContent[6]} />
-            <FeaturedCard featuredItem={FeaturedCardContent[7]} />
-            <FeaturedCard featuredItem={FeaturedCardContent[8]} />
-          </HStack>
-
+          {featuredCardGroups.map((group, index) => (
+            <HStack key={index} w="full" justifyContent="center" gap="3rem 1rem" flexWrap="wrap">
+              {group.map((itemIndex) => (
+                <FeaturedCard key={itemIndex} ref={featureRefs.current[itemIndex]} featuredItem={FeaturedCardContent[itemIndex]} />
+              ))}
+            </HStack>
+          ))}
         </HStack>
       </Flex>
 

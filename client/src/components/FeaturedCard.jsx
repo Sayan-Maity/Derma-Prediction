@@ -1,12 +1,13 @@
 
 import { Button, Flex, Text, useTheme } from '@chakra-ui/react'
+import { forwardRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const FeaturedCard = ({ featuredItem }) => {
+const FeaturedCard = forwardRef(({featuredItem}, ref) => {
     const theme = useTheme()
     const navigate = useNavigate();
     return (
-        <Flex p="2rem" width="20rem" borderRadius="10px" backgroundColor="#fff" flexDir="column" gap="1rem">
+        <Flex ref={ref} p="2rem" width="20rem" borderRadius="10px" backgroundColor="#fff" flexDir="column" gap="1rem">
             <Text fontSize="1.5rem">{featuredItem.title}</Text>
             <Text fontSize="1rem">{featuredItem.description}</Text>
             <Button
@@ -37,6 +38,6 @@ const FeaturedCard = ({ featuredItem }) => {
 
         </Flex>
     )
-}
+})
 
 export default FeaturedCard

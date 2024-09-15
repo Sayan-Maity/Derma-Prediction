@@ -10,12 +10,12 @@ export const FeaturedCardContent = [
         description: "Utilizes advanced image analysis to identify and diagnose skin conditions, offering users instant insights into their dermatological health",
         navigateUrl: "/private/derma-detection",
     },
-    {
-        title: "Skin Care",
-        description: "Provides personalized skincare recommendations and routines based on individual skin types and concerns, promoting healthier and more radiant skin",
-        navigateUrl: "/private/skin-care",
+    // {
+    //     title: "Skin Care",
+    //     description: "Provides personalized skincare recommendations and routines based on individual skin types and concerns, promoting healthier and more radiant skin",
+    //     navigateUrl: "/private/skin-care",
 
-    },
+    // },
     {
         title: "Search Diseases",
         description: "Empowers users to access a vast database of medical information, enabling quick and accurate searches for comprehensive disease-related details",
