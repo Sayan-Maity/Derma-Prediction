@@ -21,6 +21,9 @@ const LandingPage = () => {
   const textRef2 = useRef(null);
   const textRef3 = useRef(null);
   const textRef4 = useRef(null);
+  const textRef5 = useRef(null);
+  const textRef6 = useRef(null);
+  const textRef7 = useRef(null);
   const imageRef = useRef(null);
 
   const featuredCardGroups = [
@@ -43,8 +46,26 @@ const LandingPage = () => {
   useEffect(() => {
     gsap.fromTo(textRef1.current, { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 0.8 });
     gsap.fromTo(textRef2.current, { opacity: 0, y: 80 }, { opacity: 1, y: 0, duration: 1.1 });
-    gsap.fromTo(textRef3.current, { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 0.8, delay: 1 });
-    gsap.fromTo(textRef4.current, { opacity: 0, y: 80 }, { opacity: 1, y: 0, duration: 1.1, delay: 1 });
+    gsap.fromTo(textRef3.current, { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 0.8, delay: 0.5 });
+    gsap.fromTo(textRef4.current, { opacity: 0, y: 80 }, { opacity: 1, y: 0, duration: 1.1, delay: 0.5 });
+    gsap.fromTo(textRef5.current, { opacity: 0, y: 50 }, {
+      opacity: 1, y: 0, duration: 0.8, scrollTrigger: {
+        trigger: textRef5.current,
+        start: 'top 80%',
+      },
+    });
+    gsap.fromTo(textRef6.current, { opacity: 0, y: 50 }, {
+      opacity: 1, y: 0, duration: 0.8, scrollTrigger: {
+        trigger: textRef6.current,
+        start: 'top 80%',
+      },
+    });
+    gsap.fromTo(textRef7.current, { opacity: 0, y: 50 }, {
+      opacity: 1, y: 0, duration: 0.8, scrollTrigger: {
+        trigger: textRef7.current,
+        start: 'top 80%',
+      },
+    });
     gsap.fromTo(imageRef.current, { opacity: 0, x: '100px' }, { opacity: 1, x: 0, duration: 1 });
 
     const animations = [
@@ -146,15 +167,15 @@ const LandingPage = () => {
         <VStack width={{ base: "100%", xl: "50%" }} alignItems="flex-start" >
           <VStack gap="0" alignItems="flex-start">
             <Text color={theme.colors.brand.primary_green_dark} fontSize="1.2rem">Passwordless Authentication</Text>
-            <Text>Passwordless authentication is an authentication method in which a user can log in to any particular product or system without entering (and having to remember) a password or any other knowledge-based secret.</Text>
+            <Text ref={textRef5}>Passwordless authentication is an authentication method in which a user can log in to any particular product or system without entering (and having to remember) a password or any other knowledge-based secret.</Text>
           </VStack>
           <VStack gap="0" alignItems="flex-start">
             <Text color={theme.colors.brand.primary_green_dark} fontSize="1.2rem">Google's Bard LLM</Text>
-            <Text>Elevate your derma disease predictions with the power of Google's Bard Language Model (LLM). Harness cutting-edge natural language processing to obtain comprehensive and accurate information, enhancing the capabilities of our application and ensuring you receive the most up-to-date and relevant insights.</Text>
+            <Text ref={textRef6}>Elevate your derma disease predictions with the power of Google's Bard Language Model (LLM). Harness cutting-edge natural language processing to obtain comprehensive and accurate information, enhancing the capabilities of our application and ensuring you receive the most up-to-date and relevant insights.</Text>
           </VStack>
           <VStack gap="0" alignItems="flex-start">
             <Text color={theme.colors.brand.primary_green_dark} fontSize="1.2rem">Interactive Charts for Data Visualization</Text>
-            <Text>Dive into your derma data like never before with our interactive charts. Uncover meaningful insights at a glance, thanks to dynamic visualizations that empower you to understand trends, correlations, and patterns in your data, making informed decisions simpler than ever.</Text>
+            <Text ref={textRef7}>Dive into your derma data like never before with our interactive charts. Uncover meaningful insights at a glance, thanks to dynamic visualizations that empower you to understand trends, correlations, and patterns in your data, making informed decisions simpler than ever.</Text>
           </VStack>
         </VStack>
       </Flex>

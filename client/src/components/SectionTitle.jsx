@@ -1,5 +1,5 @@
 
-import { Flex, Text } from '@chakra-ui/react'
+import { Flex } from '@chakra-ui/react'
 import AnimatedText from './AnimatedText'
 
 const SectionTitle = ({ title, description }) => {
@@ -10,7 +10,12 @@ const SectionTitle = ({ title, description }) => {
               fontSize="3rem"
               fontWeight="500" 
             />
-            <Text fontSize="1.5rem" fontWeight="400" textAlign="center" >{description}</Text>
+            <AnimatedText
+              text={description}
+              fontSize="1.5rem"
+              fontWeight="400" 
+              textAlign="center" 
+            />
         </Flex>
     )
 }
