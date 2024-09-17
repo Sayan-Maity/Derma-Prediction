@@ -23,6 +23,7 @@
 
 body {
   font-family: "Inter", sans-serif;
+  overflow-x: hidden;
 }
 
 .custom-imageFile-input-magicWand {

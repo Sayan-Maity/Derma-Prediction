@@ -23,7 +23,7 @@ const Navbar = () => {
 
   return (
     <Flex width="100%" alignItems="center" justifyContent="center" margin="1rem" pos="fixed" zIndex="100">
-      <Flex width={{ base: "full", xl: "1280px" }} borderRadius="5px" justifyContent="space-between" p={{ base: "1rem", sm: "1rem 3rem" }} boxShadow="0 2px 3px #bebebe" backdropFilter="blur(8px)" >
+      <Flex width={{ base: "full", xl: "1280px" }} borderRadius="5px" justifyContent="space-between" p={{ base: "1rem", sm: "0.5rem 2rem" }} boxShadow="0 2px 3px #bebebe" backdropFilter="blur(8px)" >
         <Flex alignItems="center" gap="1rem">
           <Image ref={textRef1} src={Logo} alt="Dermify.AI logo" h="3.5rem" />
         </Flex>

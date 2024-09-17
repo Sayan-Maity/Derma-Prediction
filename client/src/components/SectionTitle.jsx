@@ -12,7 +12,7 @@ const SectionTitle = ({ title, description }) => {
             />
             <AnimatedText
               text={description}
-              fontSize="1.5rem"
+              fontSize="1.4rem"
               fontWeight="400" 
               textAlign="center" 
             />

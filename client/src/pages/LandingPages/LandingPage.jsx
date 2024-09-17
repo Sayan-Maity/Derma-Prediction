@@ -1,6 +1,6 @@
 import { createRef, useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
-import { Button, Flex, HStack, Image, Input, Text, Textarea, VStack, useTheme, useToast } from "@chakra-ui/react";
+import { Box, Button, Flex, HStack, Image, Input, Text, Textarea, VStack, useTheme, useToast } from "@chakra-ui/react";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import { useForm, ValidationError } from '@formspree/react';
@@ -25,6 +25,8 @@ const LandingPage = () => {
   const textRef6 = useRef(null);
   const textRef7 = useRef(null);
   const imageRef = useRef(null);
+  const imageRef2 = useRef(null);
+  const imageRef3 = useRef(null);
 
   const featuredCardGroups = [
     [0, 1, 2],
@@ -66,7 +68,19 @@ const LandingPage = () => {
         start: 'top 80%',
       },
     });
-    gsap.fromTo(imageRef.current, { opacity: 0, x: '100px' }, { opacity: 1, x: 0, duration: 1 });
+    gsap.fromTo(imageRef.current, { opacity: 0, x: 100 }, { opacity: 1, x: 0, duration: 1 });
+    gsap.fromTo(imageRef2.current, { opacity: 0, x: -100 }, {
+      opacity: 1, x: 0, duration: 1, scrollTrigger: {
+        trigger: imageRef2.current,
+        start: 'top 80%',
+      },
+    });
+    gsap.fromTo(imageRef3.current, { opacity: 0, x: 100 }, {
+      opacity: 1, x: 0, duration: 1, scrollTrigger: {
+        trigger: imageRef3.current,
+        start: 'top 80%',
+      },
+    });
 
     const animations = [
       { opacity: 0, x: -100, rotation: -20 },
@@ -95,15 +109,15 @@ const LandingPage = () => {
   }, []);
 
   return (
-    <Flex flexDir="column" width="100%" alignItems="center">
+    <Flex flexDir="column" width="100%" alignItems="center" bg="#f2f7fb">
       <Navbar />
 
       {/* -------------------------------  Landing Section  -------------------------------- */}
-      <Flex width={{ base: "full", xl: "1280px" }} marginTop="6rem" p="3rem" justifyContent="space-between" flexDir="row" alignItems="center" h="100vh">
+      <Flex width={{ base: "full", xl: "1280px" }} p="3rem" justifyContent="space-between" flexDir="row" alignItems="center" h="100vh">
         <Flex width={{ base: "100%", xl: "50%" }} flexDir="column" >
-          <Flex flexDir="column" lineHeight="4.5rem" width="fit-content" mb="1.5rem">
-            <Text ref={textRef1} fontSize="4rem">AI Powered</Text>
-            <Text ref={textRef2} fontSize="4rem" gap="0.5rem" alignItems={{ base: "flex-end", xl: "center" }} width="fit-content">Skin Diagnosis</Text>
+          <Flex flexDir="column" lineHeight="4rem" width="fit-content" mb="1.5rem">
+            <Text ref={textRef1} fontSize="4rem" fontWeight="semibold">AI Powered</Text>
+            <Text ref={textRef2} fontSize="4rem" fontWeight="semibold" gap="0.5rem" alignItems={{ base: "flex-end", xl: "center" }} width="fit-content">Skin Diagnosis</Text>
           </Flex>
           <Text ref={textRef3} fontSize="1.4rem"> Explore the future of dermatological care with our AI-based tool <span style={{ color: "#3ce2ad", fontWeight: "500" }}>Dermify.AI</span> which harnesses the power of image processing to offer cost-effective and accessible skin condition assessments worldwide.</Text>
           <Flex ref={textRef4} mt="1.5rem">
@@ -133,12 +147,29 @@ const LandingPage = () => {
             </Button>
           </Flex>
         </Flex>
-        <Flex width="50%" flexDir="row" alignItems="flex-end" justifyContent="flex-end" display={{ base: "none", xl: "flex" }}>
-          <Image
-            ref={imageRef}
-            src="https://ik.imagekit.io/sayancr777/tr:w-400/Dermify/LandingVector.png?updatedAt=1714966041467"
-            height="35rem"
-            alt="doctor-vector" />
+        <Flex width="50%" flexDir="row" alignItems="flex-end" justifyContent="flex-end" display={{ base: "none", md: "flex" }}>
+          <Box
+            position="relative"
+            overflow="hidden"
+            _after={{
+              content: '""',
+              position: "absolute",
+              bottom: 0,
+              left: 0,
+              right: 0,
+              height: "15px",
+              background: "linear-gradient(to bottom, #f2f7fb00 1%, #f2f7fb 99%)",
+              pointerEvents: "none",
+            }}
+          >
+            <Image
+              ref={imageRef}
+              src="https://ik.imagekit.io/sayancr777/tr:w-400/Dermify/LandingVector.png?updatedAt=1714966041467"
+              height="28rem"
+              width="max-content"
+              alt="doctor-vector"
+            />
+          </Box>
         </Flex>
       </Flex>
 
@@ -162,7 +193,7 @@ const LandingPage = () => {
 
       <Flex width={{ base: "full", xl: "1280px" }} p="3rem" justifyContent="space-between" flexDir={{ base: "column", xl: "row" }} alignItems={{ base: "center", xl: "flex-start" }} >
         <Flex width="50%" alignItems="center" justifyContent="center" display={{ base: "none", xl: "block" }}>
-          <Image src="https://ik.imagekit.io/sayancr777/tr:w-400/Dermify/WhyChooseUS.png?updatedAt=1714965959564" height="30rem" alt="choose-us" />
+          <Image ref={imageRef2} src="https://ik.imagekit.io/sayancr777/tr:w-400/Dermify/WhyChooseUS.png?updatedAt=1714965959564" height="30rem" alt="choose-us" />
         </Flex>
         <VStack width={{ base: "100%", xl: "50%" }} alignItems="flex-start" >
           <VStack gap="0" alignItems="flex-start">
@@ -226,7 +257,7 @@ const LandingPage = () => {
           </form>
         </Flex>
         <Flex width="50%" alignItems="center" justifyContent="center" display={{ base: "none", xl: "flex" }}>
-          <Image src="https://ik.imagekit.io/sayancr777/tr:w-400/Dermify/ContactUs.png?updatedAt=1714965927940" height="30rem" alt="contact-us" />
+          <Image ref={imageRef3} src="https://ik.imagekit.io/sayancr777/tr:w-400/Dermify/ContactUs.png?updatedAt=1714965927940" height="30rem" alt="contact-us" />
         </Flex>
       </Flex>
 
