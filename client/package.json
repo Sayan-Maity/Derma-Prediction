@@ -16,6 +16,7 @@
     "bootstrap": "5.2",
     "chart.js": "^4.4.1",
     "draft-js": "^0.11.7",
+    "framer-motion": "^11.9.0",
     "gsap": "^3.12.5",
     "js-cookie": "^3.0.5",
     "magic-sdk": "^22.0.1",
